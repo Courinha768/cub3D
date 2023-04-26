@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 18:16:49 by aappleto          #+#    #+#             */
-/*   Updated: 2022/11/16 17:55:16 by aappleto         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../includes/cub3D.h"
 
-static int	exit_game(t_all *all)
+int	exit_game(t_all *all)
 {
 	free_map(all->map.map);
 	mlx_destroy_window(all->mlx.ptr, all->mlx.win);
@@ -20,55 +8,32 @@ static int	exit_game(t_all *all)
 	return (0);
 }
 
-int	key_hook(int keycode, t_all *all)
-{
-	if (keycode == ESCAPE)
-		exit_game(all);
-	else if (keycode == UP || keycode == W)
-		move_front(all);
-	else if (keycode == DOWN || keycode == S)
-		move_back(all);
-	else if (keycode == LEFT || keycode == A)
-		move_left(all);
-	else if (keycode == RIGHT || keycode == D)
-		move_right(all);
-	return (0);
-}
-
-static void	init_all(t_all *all, char **map)
-{
-	all->map.map = map;
-	all->map.width = ft_strlen(map[0]);
-	all->map.height = 0;
-	while (all->map.map[all->map.height])
-		all->map.height++;
-	all->mlx.ptr = mlx_init();
-	all->mlx.win = mlx_new_window(all->mlx.ptr, (all->map.width - 1) * MP_SSIZE, all->map.height * MP_SSIZE, GAME_NAME);
-	define_playerInfo(all);
-}
-
-static void	create_miniMap(char **map)
+static void	start_game(char *mapPath, int draw_mm)
 {
 	t_all	all;
 
-	init_all(&all, map);
-	draw_miniMap(&all);
-
+	init_map(&all.map, define_map(mapPath));
+	start_playerInfo(&all);
+	if (draw_mm)
+	{
+		init_mm_mlxVars(&all.mlx, all.map.width, all.map.height);
+		all.player.img = create_SquareImg(all.mlx.ptr, RGB_RED, 0.5);
+		mlx_hook(all.mlx.win, ON_DESTROY, 0, exit_game, &all);
+		mlx_loop_hook(all.mlx.ptr, loopHook, &all);
+		draw_miniMap(&all);
+	}
+	else	{}
 	mlx_key_hook(all.mlx.win, key_hook, &all);
-	mlx_hook(all.mlx.win, 17, 1L << 17, exit_game, &all);
-	mlx_loop_hook(all.mlx.ptr, loopHook, &all);
 	mlx_loop(all.mlx.ptr);
 }
 
 int	main(int ac, char **av)
 {
 	int		verify_value;
-	char	**map;
 
 	verify_value = verify(ac, av);
 	if (verify_value)
 		return (print_error(verify_value));
-	map = define_map(av[1]);
-	create_miniMap(map);
+	start_game(av[1], 1);
 	return (0);
 }

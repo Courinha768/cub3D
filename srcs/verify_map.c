@@ -31,8 +31,11 @@ static int	verify_name(char *file_name)
 
 int	verify(int ac, char **av)
 {
-	if (ac != 2)
+	if (ac != 2 && ac != 3)
 		return (1);
+	if (ac == 3)
+		if (ft_strncmp(av[2], "test", 5))
+			return (1);
 	if (verify_name(av[1]))
 		return (verify_name(av[1]));
 	if (verify_map(av[1]))

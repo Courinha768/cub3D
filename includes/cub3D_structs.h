@@ -1,7 +1,7 @@
 #ifndef CUB3D_STRUCTS_H
 # define CUB3D_STRUCTS_H
 
-typedef struct	s_map_info {
+typedef struct	s_mapInfo {
 	char			**map;
 	unsigned int	height;
 	unsigned int	width;
