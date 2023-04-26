@@ -28,6 +28,7 @@ typedef struct	s_position {
 typedef struct	s_playerInfo {
 	t_position	pos;
 	void		*img;
+	float		dirX;
 }	t_playerInfo;
 
 typedef struct	s_all {
@@ -35,6 +36,7 @@ typedef struct	s_all {
 	t_mlx			mlx;
 	t_playerInfo	player;
 	void			*whiteSquareImg;
+	void			*whiteSquareImg2;
 }	t_all;
 
 typedef struct	s_img_info {

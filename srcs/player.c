@@ -1,5 +1,12 @@
 #include "../includes/cub3D.h"
 
+int	same_position(t_position p1, t_position p2)
+{
+	if (p1.x == p2.x && p1.y == p2.y)
+		return (1);
+	return (0);
+}
+
 static t_position	find_playerPosition(t_mapInfo *map)
 {
 	t_position playerPosition;
@@ -84,4 +91,12 @@ void	define_playerInfo(t_all *all)
 {
 	all->player.pos = find_playerPosition(&all->map);
 	all->player.img = create_player_image(all->mlx, create_trgb(PLAYER_COLOR));
+	if (all->map.map[(int)all->player.pos.y][(int)all->player.pos.x] == 'N')
+		all->player.dirX = M_PI;
+	else if (all->map.map[(int)all->player.pos.y][(int)all->player.pos.x] == 'S')
+		all->player.dirX = 0;
+	else if (all->map.map[(int)all->player.pos.y][(int)all->player.pos.x] == 'E')
+		all->player.dirX = 3 * M_PI_2;
+	else if (all->map.map[(int)all->player.pos.y][(int)all->player.pos.x] == 'W')
+		all->player.dirX = M_PI_2;
 }

@@ -35,16 +35,17 @@ fclean		:	clean
 
 re			:	fclean all
 
-teste:
-	@printf "hello\n"
-	@printf "\033[A\033[K"
-
-val			:	${NAME}
+val			:	all
 	@valgrind \
 	--leak-check=full --tool=memcheck \
 	--show-reachable=yes \
 	--track-fds=yes \
 	--errors-for-leak-kinds=all \
-	--show-leak-kinds=all ./cub3D basic_map
+	--show-leak-kinds=all ./cub3D maps/basic_map.ber
+
+r			: all
+	./cub3D maps/basic_map.ber
+
+			
 
 .PHONY		:	all clean fclean re

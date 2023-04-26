@@ -20,6 +20,21 @@ static int	exit_game(t_all *all)
 	return (0);
 }
 
+int	key_hook(int keycode, t_all *all)
+{
+	if (keycode == ESCAPE)
+		exit_game(all);
+	else if (keycode == UP || keycode == W)
+		move_front(all);
+	else if (keycode == DOWN || keycode == S)
+		move_back(all);
+	else if (keycode == LEFT || keycode == A)
+		move_left(all);
+	else if (keycode == RIGHT || keycode == D)
+		move_right(all);
+	return (0);
+}
+
 static void	init_all(t_all *all, char **map)
 {
 	all->map.map = map;
@@ -39,7 +54,9 @@ static void	create_miniMap(char **map)
 	init_all(&all, map);
 	draw_miniMap(&all);
 
+	mlx_key_hook(all.mlx.win, key_hook, &all);
 	mlx_hook(all.mlx.win, 17, 1L << 17, exit_game, &all);
+	mlx_loop_hook(all.mlx.ptr, loopHook, &all);
 	mlx_loop(all.mlx.ptr);
 }
 

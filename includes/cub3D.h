@@ -5,12 +5,12 @@
 # include "cub3D_libraries.h"
 # include "cub3D_functions.h"
 
-#define SCREEN_WIDTH 600
-#define SCREEN_HEIGHT 600
-#define MP_SSIZE 40
-#define PATH_COLOR 0, 180, 180, 180
-#define PLAYER_COLOR 0, 255, 0, 0
-#define GAME_NAME "cub3D"
+# define MP_SSIZE 40
+# define PATH_COLOR 0, 180, 180, 180
+# define PLAYER_COLOR 0, 255, 0, 0
+# define GAME_NAME "cub3D"
+
+# define PLAYER_SPEED 0.2
 
 # define ESCAPE 65307
 # define UP 65362
