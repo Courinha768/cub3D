@@ -14,12 +14,28 @@ void	move_back(t_all *all)
 
 void	move_left(t_all *all)
 {
-	all->player.pos.x += PLAYER_SPEED * cos(all->player.dirX);
-	all->player.pos.y += PLAYER_SPEED * sin(all->player.dirX);
+	if (sin(all->player.dirX - M_PI_2) < 0)
+	{
+		all->player.pos.x -= PLAYER_SPEED * cos(all->player.dirX);
+		all->player.pos.y += PLAYER_SPEED * sin(all->player.dirX);
+	}
+	else
+	{
+		all->player.pos.x += PLAYER_SPEED * cos(all->player.dirX);
+		all->player.pos.y -= PLAYER_SPEED * sin(all->player.dirX);
+	}
 }
 
 void	move_right(t_all *all)
 {
-	all->player.pos.x -= PLAYER_SPEED * cos(all->player.dirX);
-	all->player.pos.y -= PLAYER_SPEED * sin(all->player.dirX);
+	if (sin(all->player.dirX - M_PI_2) < 0)
+	{
+		all->player.pos.x += PLAYER_SPEED * cos(all->player.dirX);
+		all->player.pos.y -= PLAYER_SPEED * sin(all->player.dirX);
+	}
+	else
+	{
+		all->player.pos.x -= PLAYER_SPEED * cos(all->player.dirX);
+		all->player.pos.y += PLAYER_SPEED * sin(all->player.dirX);
+	}
 }

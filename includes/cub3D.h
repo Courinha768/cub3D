@@ -11,6 +11,7 @@
 # define GAME_NAME "cub3D"
 
 # define PLAYER_SPEED 0.2
+# define CAMERA_SPEED 0.1
 
 enum {
 	ESCAPE = 65307,

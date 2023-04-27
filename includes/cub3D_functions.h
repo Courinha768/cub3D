@@ -48,5 +48,11 @@ void	move_back(t_all *all);
 void	move_left(t_all *all);
 void	move_right(t_all *all);
 
+/*	Camera Functions	*/
+
+void	look_up(t_all *all);
+void	look_down(t_all *all);
+void	look_left(t_all *all);
+void	look_right(t_all *all);
 
 #endif
