@@ -32,7 +32,7 @@ static void	paint_square(t_img_info	*img_info, int color, float size)
 }
 
 /*	Creates an image and paints a square of porportions "size" with "color"	*/
-void	*create_SquareImg(void	*mlx_ptr, int color, float size)
+void	*create_squareimg(void	*mlx_ptr, int color, float size)
 {
 	void		*img;
 	t_img_info	info;

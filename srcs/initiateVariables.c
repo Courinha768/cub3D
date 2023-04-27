@@ -9,7 +9,7 @@ void	init_map(t_mapInfo *map, char **charMap)
 		map->height++;
 }
 
-void	init_mm_mlxVars(t_mlx *mlxVars, int width, int height)
+void	init_mm_mlxvars(t_mlx *mlxVars, int width, int height)
 {
 	mlxVars->ptr = mlx_init();
 	mlxVars->win = mlx_new_window(mlxVars->ptr, (width - 1)

@@ -1,6 +1,6 @@
 #include "../includes/cub3D.h"
 
-int	loopHook(t_all *all)
+int	loop_hook(t_all *all)
 {
 	static unsigned int	frames;
 	static t_position	last_position;

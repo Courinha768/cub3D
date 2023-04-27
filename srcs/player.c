@@ -1,13 +1,13 @@
 #include "../includes/cub3D.h"
 
-static t_position	find_playerPosition(t_mapInfo *map)
+static t_position	find_playerposition(t_mapInfo *map)
 {
-	t_position		playerPosition;
+	t_position		player_position;
 	unsigned int	i;
 	unsigned int	j;
 
-	playerPosition.x = -1;
-	playerPosition.y = -1;
+	player_position.x = -1;
+	player_position.y = -1;
 	i = -1;
 	while (++i < map->width)
 	{
@@ -17,18 +17,18 @@ static t_position	find_playerPosition(t_mapInfo *map)
 			if (map->map[j][i] == 'N' || map->map[j][i] == 'S'
 				|| map->map[j][i] == 'E' || map->map[j][i] == 'W')
 			{
-				playerPosition.x = (float)i;
-				playerPosition.y = (float)j;
-				return (playerPosition);
+				player_position.x = (float)i;
+				player_position.y = (float)j;
+				return (player_position);
 			}
 		}
 	}
-	return (playerPosition);
+	return (player_position);
 }
 
-void	start_playerInfo(t_all *all)
+void	start_playerinfo(t_all *all)
 {
-	all->player.pos = find_playerPosition(&all->map);
+	all->player.pos = find_playerposition(&all->map);
 	if (all->map.map[(int)all->player.pos.y][(int)all->player.pos.x] == 'N')
 		all->player.dirX = M_PI;
 	if (all->map.map[(int)all->player.pos.y][(int)all->player.pos.x] == 'S')

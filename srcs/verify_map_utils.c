@@ -52,7 +52,7 @@ int	not_token(char c)
 	return (c == 48 || c == 49 || c == 'N' || c == 'S' || c == 'E' || c == 'W');
 }
 
-int	sameSizeLines(char **map)
+int	samesizelines(char **map)
 {
 	int	i;
 	int	len;

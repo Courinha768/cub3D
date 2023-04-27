@@ -5,7 +5,7 @@ static int	verify_map(char	*file_name)
 	char	**map;
 
 	map = define_map(file_name);
-	if (sameSizeLines(map) || correct_char(map) || exists_player(map))
+	if (samesizelines(map) || correct_char(map) || exists_player(map))
 		return (free_map(map));
 	free_map(map);
 	return (0);

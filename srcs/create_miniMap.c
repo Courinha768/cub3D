@@ -10,13 +10,13 @@ void	place_player(t_all *all)
 	put_img(all, all->player.img, y, x);
 }
 
-void	draw_miniMap(t_all *all)
+void	draw_minimap(t_all *all)
 {
 	int		j;
 	int		i;
 
-	all->whiteSquareImg = create_SquareImg(all->mlx.ptr, RGB_LIGHT_GREY, 1);
-	all->whiteSquareImg2 = create_SquareImg(all->mlx.ptr, RGB_LIGHT_GREY, 0.5);
+	all->whiteSquareImg = create_squareimg(all->mlx.ptr, RGB_LIGHT_GREY, 1);
+	all->whiteSquareImg2 = create_squareimg(all->mlx.ptr, RGB_LIGHT_GREY, 0.5);
 	i = -1;
 	while (all->map.map[++i] && all->map.map[i][0])
 	{
