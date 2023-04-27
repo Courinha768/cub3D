@@ -37,8 +37,9 @@ void	*create_SquareImg(void	*mlx_ptr, int color, float size)
 	void		*img;
 	t_img_info	info;
 
-	img = mlx_new_image(mlx_ptr,  MP_SSIZE * size, MP_SSIZE * size);
-	info.buffer = mlx_get_data_addr(img, &info.pixel_bits, &info.line_bytes, &info.endian);
+	img = mlx_new_image(mlx_ptr, MP_SSIZE * size, MP_SSIZE * size);
+	info.buffer = mlx_get_data_addr(img, &info.pixel_bits, &info.line_bytes,
+			&info.endian);
 	paint_square(&info, color, size);
 	return (img);
 }

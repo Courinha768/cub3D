@@ -22,7 +22,9 @@ static void	start_game(char *mapPath, int draw_mm)
 		mlx_loop_hook(all.mlx.ptr, loopHook, &all);
 		draw_miniMap(&all);
 	}
-	else	{}
+	else
+	{
+	}
 	mlx_key_hook(all.mlx.win, key_hook, &all);
 	mlx_loop(all.mlx.ptr);
 }

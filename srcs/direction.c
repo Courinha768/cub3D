@@ -17,5 +17,5 @@ void	look_left(t_all *all)
 
 void	look_right(t_all *all)
 {
-	all->player.dirX -= CAMERA_SPEED;	
+	all->player.dirX -= CAMERA_SPEED;
 }

@@ -2,7 +2,7 @@
 
 static t_position	find_playerPosition(t_mapInfo *map)
 {
-	t_position playerPosition;
+	t_position		playerPosition;
 	unsigned int	i;
 	unsigned int	j;
 
@@ -14,7 +14,8 @@ static t_position	find_playerPosition(t_mapInfo *map)
 		j = -1;
 		while (++j < map->height)
 		{
-			if (map->map[j][i] == 'N' || map->map[j][i] == 'S' || map->map[j][i] == 'E' || map->map[j][i] == 'W')
+			if (map->map[j][i] == 'N' || map->map[j][i] == 'S'
+				|| map->map[j][i] == 'E' || map->map[j][i] == 'W')
 			{
 				playerPosition.x = (float)i;
 				playerPosition.y = (float)j;
@@ -27,13 +28,13 @@ static t_position	find_playerPosition(t_mapInfo *map)
 
 void	start_playerInfo(t_all *all)
 {
-	all->player.pos = find_playerPosition(&all->map);	
+	all->player.pos = find_playerPosition(&all->map);
 	if (all->map.map[(int)all->player.pos.y][(int)all->player.pos.x] == 'N')
 		all->player.dirX = M_PI;
-	else if (all->map.map[(int)all->player.pos.y][(int)all->player.pos.x] == 'S')
+	if (all->map.map[(int)all->player.pos.y][(int)all->player.pos.x] == 'S')
 		all->player.dirX = 0;
-	else if (all->map.map[(int)all->player.pos.y][(int)all->player.pos.x] == 'E')
+	if (all->map.map[(int)all->player.pos.y][(int)all->player.pos.x] == 'E')
 		all->player.dirX = 3 * M_PI_2;
-	else if (all->map.map[(int)all->player.pos.y][(int)all->player.pos.x] == 'W')
+	if (all->map.map[(int)all->player.pos.y][(int)all->player.pos.x] == 'W')
 		all->player.dirX = M_PI_2;
 }

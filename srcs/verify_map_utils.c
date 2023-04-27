@@ -33,10 +33,12 @@ int	exists_player(char **map)
 		j = -1;
 		while (map[i][++j])
 		{
-			if (map[i][j] == 'N' || map[i][j] == 'S' || map[i][j] == 'E' || map[i][j] == 'W')
+			if (map[i][j] == 'N' || map[i][j] == 'S'
+				|| map[i][j] == 'E' || map[i][j] == 'W')
 				if (flag1)
 					flag2 = 1;
-			if (map[i][j] == 'N' || map[i][j] == 'S' || map[i][j] == 'E' || map[i][j] == 'W')
+			if (map[i][j] == 'N' || map[i][j] == 'S'
+				|| map[i][j] == 'E' || map[i][j] == 'W')
 				flag1 = 1;
 		}
 	}

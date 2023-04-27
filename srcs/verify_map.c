@@ -20,7 +20,8 @@ static int	verify_name(char *file_name)
 	while (file_name[i] && file_name[i] != 46)
 		i++;
 	i++;
-	if (file_name[i] != 98 || file_name[i + 1] != 101 || file_name[i + 2] != 114)
+	if (file_name[i] != 98 || file_name[i + 1] != 101
+		|| file_name[i + 2] != 114)
 		return (2);
 	fd = open(file_name, O_RDONLY);
 	if (fd == -1)
