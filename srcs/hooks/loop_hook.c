@@ -8,6 +8,22 @@ int	loop_hook(t_data *data)
 	frames++;
 	if (!(frames % 1000))
 	{
+		if (data->keys.w)
+			move_front(data);
+		else if (data->keys.s)
+			move_back(data);
+		else if (data->keys.a)
+			move_left(data);
+		else if (data->keys.d)
+			move_right(data);
+		if (data->keys.up)
+			look_up(data);
+		else if (data->keys.down)
+			look_down(data);
+		else if (data->keys.left)
+			look_left(data);
+		else if (data->keys.right)
+			look_right(data);
 		if (!last_position.x || !same_position(last_position, data->player.pos))
 		{
 			if (last_position.x)

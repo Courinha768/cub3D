@@ -25,7 +25,6 @@ int		create_trgb(int t, int r, int g, int b);
 void	place_player(t_data *data);
 
 int		loop_hook(t_data *data);
-int		key_hook(int keycode, t_data *data);
 
 int		free_map(char **map);
 
@@ -48,5 +47,6 @@ void	look_left(t_data *data);
 void	look_right(t_data *data);
 
 int	key_press_hook(int keycode, t_data *data);
+int	key_release_hook(int keycode, t_data *data);
 
 #endif

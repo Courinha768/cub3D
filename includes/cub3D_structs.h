@@ -31,10 +31,22 @@ typedef struct	s_playerInfo {
 	float		dirX;
 }	t_playerInfo;
 
+typedef struct	s_key_events {
+	int	w;
+	int	s;
+	int	a;
+	int	d;
+	int	up;
+	int	down;
+	int	left;
+	int	right;
+}	t_key_events;
+
 typedef struct	s_data {
 	t_mapInfo		map;
 	t_mlx			mm_mlx;
 	t_playerInfo	player;
+	t_key_events	keys;
 	void			*whiteSquareImg;
 	void			*whiteSquareImg2;
 }	t_data;

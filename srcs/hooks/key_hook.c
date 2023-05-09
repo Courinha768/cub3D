@@ -1,30 +1,47 @@
 #include "../../includes/cub3D.h"
 
-// int	key_press_hook(t_data *data)
-// {
-// 	printf
-// }
-
-int	key_hook(int keycode, t_data *data)
+int	key_press_hook(int keycode, t_data *data)
 {
 	if (keycode == ESCAPE)
 		exit_game(data);
 	else if (keycode == W)
-		move_front(data);
+		data->keys.w = 1;
 	else if (keycode == S)
-		move_back(data);
+		data->keys.s = 1;
 	else if (keycode == A)
-		move_left(data);
+		data->keys.a = 1;
 	else if (keycode == D)
-		move_right(data);
+		data->keys.d = 1;
 	else if (keycode == UP)
-		look_up(data);
+		data->keys.up = 1;
 	else if (keycode == DOWN)
-		look_down(data);
+		data->keys.down = 1;
 	else if (keycode == LEFT)
-		look_left(data);
+		data->keys.left = 1;
 	else if (keycode == RIGHT)
-		look_right(data);
+		data->keys.right = 1;
 	return (0);
-	printf("x : %f\ny : %f\n\n", data->player.pos.x, data->player.pos.y);
+}
+
+int	key_release_hook(int keycode, t_data *data)
+{
+	if (keycode == ESCAPE)
+		exit_game(data);
+	else if (keycode == W)
+		data->keys.w = 0;
+	else if (keycode == S)
+		data->keys.s = 0;
+	else if (keycode == A)
+		data->keys.a = 0;
+	else if (keycode == D)
+		data->keys.d = 0;
+	else if (keycode == UP)
+		data->keys.up = 0;
+	else if (keycode == DOWN)
+		data->keys.down = 0;
+	else if (keycode == LEFT)
+		data->keys.left = 0;
+	else if (keycode == RIGHT)
+		data->keys.right = 0;
+	return (0);
 }
