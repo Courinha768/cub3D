@@ -17,8 +17,8 @@ static t_position	find_playerposition(t_mapInfo *map)
 			if (map->map[j][i] == 'N' || map->map[j][i] == 'S'
 				|| map->map[j][i] == 'E' || map->map[j][i] == 'W')
 			{
-				player_position.x = (float)i;
-				player_position.y = (float)j;
+				player_position.x = (float)i + 0.5;
+				player_position.y = (float)j + 0.5;
 				return (player_position);
 			}
 		}

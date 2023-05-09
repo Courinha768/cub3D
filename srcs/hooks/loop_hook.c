@@ -1,38 +1,52 @@
 #include "../../includes/cub3D.h"
 
+static void	move(t_data *data)
+{
+	if (data->keys.w)
+		move_front(data);
+	if (data->keys.s)
+		move_back(data);
+	if (data->keys.a)
+		move_left(data);
+	if (data->keys.d)
+		move_right(data);
+	if (data->keys.up)
+		look_up(data);
+	if (data->keys.down)
+		look_down(data);
+	if (data->keys.left)
+		look_left(data);
+	if (data->keys.right)
+		look_right(data);
+}
+
+static int	collision(t_data *data)
+{
+	if (data->map.map[(int)data->player.pos.y][(int)data->player.pos.x] - 48)
+		return (1);
+	return (0);
+}
+
 int	loop_hook(t_data *data)
 {
 	static unsigned int	frames;
-	static t_position	last_position;
+	t_position	saved_position;
 
 	frames++;
 	if (!(frames % 1000))
 	{
-		if (data->keys.w)
-			move_front(data);
-		else if (data->keys.s)
-			move_back(data);
-		else if (data->keys.a)
-			move_left(data);
-		else if (data->keys.d)
-			move_right(data);
-		if (data->keys.up)
-			look_up(data);
-		else if (data->keys.down)
-			look_down(data);
-		else if (data->keys.left)
-			look_left(data);
-		else if (data->keys.right)
-			look_right(data);
-		if (!last_position.x || !same_position(last_position, data->player.pos))
+		saved_position = create_position(data->player.pos.x, data->player.pos.y);
+		move(data);
+		if ((!saved_position.x || !same_position(saved_position, data->player.pos)) && !collision(data))
 		{
-			if (last_position.x)
-				put_img(data, data->whiteSquareImg2, last_position.y * MP_SSIZE
-					+ MP_SSIZE / 4, last_position.x * MP_SSIZE + MP_SSIZE / 4);
-			last_position.x = data->player.pos.x;
-			last_position.y = data->player.pos.y;
+			if (saved_position.x)
+				put_img(data, data->whiteSquareImg2, (saved_position.y - 0.5) * MP_SSIZE
+					+ MP_SSIZE / 4, (saved_position.x - 0.5) * MP_SSIZE + MP_SSIZE / 4);
+			saved_position = create_position(data->player.pos.x, data->player.pos.y);
 			place_player(data);
 		}
+		if (collision(data))
+			data->player.pos = create_position(saved_position.x, saved_position.y);
 	}
 	return (0);
 }
