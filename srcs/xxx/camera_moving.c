@@ -1,21 +1,21 @@
 #include "../includes/cub3D.h"
 
-void	look_up(t_all *all)
+void	look_up(t_data *data)
 {
-	(void)all;
+	(void)data;
 }
 
-void	look_down(t_all *all)
+void	look_down(t_data *data)
 {
-	(void)all;
+	(void)data;
 }
 
-void	look_left(t_all *all)
+void	look_left(t_data *data)
 {
-	all->player.dirX += CAMERA_SPEED;
+	data->player.dirX += CAMERA_SPEED;
 }
 
-void	look_right(t_all *all)
+void	look_right(t_data *data)
 {
-	all->player.dirX -= CAMERA_SPEED;
+	data->player.dirX -= CAMERA_SPEED;
 }

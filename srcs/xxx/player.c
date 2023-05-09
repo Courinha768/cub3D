@@ -26,15 +26,15 @@ static t_position	find_playerposition(t_mapInfo *map)
 	return (player_position);
 }
 
-void	start_playerinfo(t_all *all)
+void	start_playerinfo(t_data *data)
 {
-	all->player.pos = find_playerposition(&all->map);
-	if (all->map.map[(int)all->player.pos.y][(int)all->player.pos.x] == 'N')
-		all->player.dirX = M_PI;
-	if (all->map.map[(int)all->player.pos.y][(int)all->player.pos.x] == 'S')
-		all->player.dirX = 0;
-	if (all->map.map[(int)all->player.pos.y][(int)all->player.pos.x] == 'E')
-		all->player.dirX = 3 * M_PI_2;
-	if (all->map.map[(int)all->player.pos.y][(int)all->player.pos.x] == 'W')
-		all->player.dirX = M_PI_2;
+	data->player.pos = find_playerposition(&data->map);
+	if (data->map.map[(int)data->player.pos.y][(int)data->player.pos.x] == 'N')
+		data->player.dirX = M_PI;
+	if (data->map.map[(int)data->player.pos.y][(int)data->player.pos.x] == 'S')
+		data->player.dirX = 0;
+	if (data->map.map[(int)data->player.pos.y][(int)data->player.pos.x] == 'E')
+		data->player.dirX = 3 * M_PI_2;
+	if (data->map.map[(int)data->player.pos.y][(int)data->player.pos.x] == 'W')
+		data->player.dirX = M_PI_2;
 }

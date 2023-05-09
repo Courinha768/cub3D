@@ -12,13 +12,13 @@ typedef struct	s_mlx {
 	void	*win;
 }	t_mlx;
 
-typedef struct	s_data {
+typedef struct	s_img_data {
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-}				t_data;
+}				t_img_data;
 
 typedef struct	s_position {
 	float	x;
@@ -31,13 +31,13 @@ typedef struct	s_playerInfo {
 	float		dirX;
 }	t_playerInfo;
 
-typedef struct	s_all {
+typedef struct	s_data {
 	t_mapInfo		map;
-	t_mlx			mlx;
+	t_mlx			mm_mlx;
 	t_playerInfo	player;
 	void			*whiteSquareImg;
 	void			*whiteSquareImg2;
-}	t_all;
+}	t_data;
 
 typedef struct	s_img_info {
 	int		pixel_bits;
