@@ -35,7 +35,7 @@ int	verify(int ac, char **av)
 	if (ac != 2 && ac != 3)
 		return (1);
 	if (ac == 3)
-		if (ft_strncmp(av[2], "test", 5))
+		if (ft_strncmp(av[2], "draw_minimap", 13))
 			return (1);
 	if (verify_name(av[1]))
 		return (verify_name(av[1]));
