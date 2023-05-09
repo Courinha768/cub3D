@@ -1,4 +1,4 @@
-#include "../includes/cub3D.h"
+#include "../../includes/cub3D.h"
 
 static void	paint_square(t_img_info	*img_info, int color, float size)
 {

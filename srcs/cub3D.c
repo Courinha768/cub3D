@@ -1,5 +1,7 @@
 #include "../includes/cub3D.h"
 
+
+
 int	exit_game(t_all *all)
 {
 	free_map(all->map.map);
@@ -8,7 +10,7 @@ int	exit_game(t_all *all)
 	return (0);
 }
 
-static void	start_game(char *mapPath, int draw_mm)
+void	start_game(char *mapPath, int draw_mm)
 {
 	t_all	all;
 
@@ -27,15 +29,4 @@ static void	start_game(char *mapPath, int draw_mm)
 	}
 	mlx_key_hook(all.mlx.win, key_hook, &all);
 	mlx_loop(all.mlx.ptr);
-}
-
-int	main(int ac, char **av)
-{
-	int		verify_value;
-
-	verify_value = verify(ac, av);
-	if (verify_value)
-		return (print_error(verify_value));
-	start_game(av[1], 1);
-	return (0);
 }

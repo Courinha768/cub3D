@@ -1,16 +1,28 @@
 #ifndef CUB3D_FUNCTIONS_H
 # define CUB3D_FUNCTIONS_H
 
+void	start_game(char *mapPath, int draw_mm);
+int		exit_game(t_all *all);
+
+void	init_map(t_mapInfo *map, char **charMap);
+char	**define_map(char *file_name);
+
+void	start_playerinfo(t_all *all);
+
+void	*create_squareimg(void	*mlx_ptr, int color, float size);
+
+void	init_mm_mlxvars(t_mlx *mlxVars, int width, int height);
+/*=====================================================*/
+
 
 int		print_error(int value);
 
-int		exit_game(t_all *all);
+
 
 int		same_position(t_position p1, t_position p2);
 
 /*	Image Utils*/
 
-void	*create_squareimg(void	*mlx_ptr, int color, float size);
 void	put_img(t_all *all, void *img, int y, int x);
 int		create_trgb(int t, int r, int g, int b);
 void	place_player(t_all *all);
@@ -23,14 +35,13 @@ int		key_hook(int keycode, t_all *all);
 
 /*	Initiate Variables	*/
 
-void	start_playerinfo(t_all *all);
-void	init_mm_mlxvars(t_mlx *mlxVars, int width, int height);
-void	init_map(t_mapInfo *map, char **charMap);
+
+
 
 /*	Map functions	*/
 
 int		free_map(char **map);
-char	**define_map(char *file_name);
+
 void	draw_minimap(t_all *all);
 
 /*	Verify functions	*/
