@@ -10,7 +10,7 @@
 # define RGB_RED create_trgb(0, 255, 0, 0)
 # define GAME_NAME "cub3D"
 
-# define PLAYER_SPEED 0.2
+# define PLAYER_SPEED 20
 # define CAMERA_SPEED 0.1
 
 enum {

@@ -1,5 +1,8 @@
 #include "../../includes/cub3D.h"
 
+/*
+Recursivly gets every line in the file pointed by fd
+*/
 static char	**get_map(int fd, int lc, char **map)
 {
 	char	*line;
@@ -15,6 +18,9 @@ static char	**get_map(int fd, int lc, char **map)
 	return (map);
 }
 
+/*
+Returns the map present in the file with the name file_name
+*/
 char	**define_map(char *file_name)
 {
 	char	**map;
@@ -26,6 +32,10 @@ char	**define_map(char *file_name)
 	return (map);
 }
 
+/*
+Saves the map in the mapInfo structure and obtains the information present in the map.
+namely: map width and map height.
+*/
 void	init_map(t_mapInfo *map, char **charMap)
 {
 	map->map = charMap;
@@ -35,6 +45,9 @@ void	init_map(t_mapInfo *map, char **charMap)
 		map->height++;
 }
 
+/*
+Frees the dynamically allocated map
+*/
 int	free_map(char **map)
 {
 	int	i;
