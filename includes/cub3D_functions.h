@@ -18,7 +18,7 @@ void	create_minimap(t_data *data);
 int		print_error(int value);
 
 int		same_position(t_position p1, t_position p2);
-t_position	create_position(float x, float y);
+t_position	define_position(float x, float y);
 
 void	put_img(t_data *data, void *img, int y, int x);
 int		create_trgb(int t, int r, int g, int b);

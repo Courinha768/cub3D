@@ -35,18 +35,18 @@ int	loop_hook(t_data *data)
 	frames++;
 	if (!(frames % 1000))
 	{
-		saved_position = create_position(data->player.pos.x, data->player.pos.y);
+		saved_position = define_position(data->player.pos.x, data->player.pos.y);
 		move(data);
 		if ((!saved_position.x || !same_position(saved_position, data->player.pos)) && !collision(data))
 		{
 			if (saved_position.x)
 				put_img(data, data->whiteSquareImg2, (saved_position.y - 0.5) * MP_SSIZE
 					+ MP_SSIZE / 4, (saved_position.x - 0.5) * MP_SSIZE + MP_SSIZE / 4);
-			saved_position = create_position(data->player.pos.x, data->player.pos.y);
+			saved_position = define_position(data->player.pos.x, data->player.pos.y);
 			place_player(data);
 		}
 		if (collision(data))
-			data->player.pos = create_position(saved_position.x, saved_position.y);
+			data->player.pos = define_position(saved_position.x, saved_position.y);
 	}
 	return (0);
 }
