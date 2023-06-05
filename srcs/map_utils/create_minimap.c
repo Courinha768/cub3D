@@ -11,7 +11,7 @@ int	exit_game(t_data *data)
 void	create_minimap(t_data *data)
 {
 	init_mm_mlxvars(&data->mm_mlx, data->map.width, data->map.height);
-	data->player.img = create_squareimg(data->mm_mlx.ptr, RGB_RED, 0.5);
+	data->player.img = create_squareimg(data->mm_mlx.ptr, RGB_RED, PLAYER_PROPORTION);
 
 	mlx_hook(data->mm_mlx.win, ON_DESTROY, 0, exit_game, data);
 	mlx_hook(data->mm_mlx.win, ON_KEYDOWN, 1, key_press_hook, data);

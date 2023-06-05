@@ -6,7 +6,7 @@ void	draw_minimap(t_data *data)
 	int		i;
 
 	data->whiteSquareImg = create_squareimg(data->mm_mlx.ptr, RGB_LIGHT_GREY, 1);
-	data->whiteSquareImg2 = create_squareimg(data->mm_mlx.ptr, RGB_LIGHT_GREY, 0.5);
+	data->whiteSquareImg2 = create_squareimg(data->mm_mlx.ptr, RGB_LIGHT_GREY, PLAYER_PROPORTION);
 	i = -1;
 	while (data->map.map[++i] && data->map.map[i][0])
 	{

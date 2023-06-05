@@ -7,11 +7,13 @@
 
 # define MP_SSIZE 32
 # define RGB_LIGHT_GREY create_trgb(0, 180, 180, 180)
+# define RGB_BLACK create_trgb(0, 0, 0, 0)
 # define RGB_RED create_trgb(0, 255, 0, 0)
 # define GAME_NAME "cub3D"
 
 # define PLAYER_SPEED 20
 # define CAMERA_SPEED 0.1
+# define PLAYER_PROPORTION 0.40625
 
 enum {
 	ESCAPE = 65307,
