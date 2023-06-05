@@ -40,8 +40,8 @@ int	loop_hook(t_data *data)
 		if ((!saved_position.x || !same_position(saved_position, data->player.pos)) && !collision(data))
 		{
 			if (saved_position.x)
-				put_img(data, data->whiteSquareImg2, (saved_position.y - 0.5) * MP_SSIZE
-					+ MP_SSIZE / 4, (saved_position.x - 0.5) * MP_SSIZE + MP_SSIZE / 4);
+				put_img(data, data->whiteSquareImg2, (saved_position.y - PLAYER_PROPORTION) * MP_SSIZE
+					+ MP_SSIZE / 4, (saved_position.x - PLAYER_PROPORTION) * MP_SSIZE + MP_SSIZE / 4);
 			saved_position = define_position(data->player.pos.x, data->player.pos.y);
 			place_player(data);
 		}
