@@ -1,4 +1,4 @@
-#include "../../includes/cub3D.h"
+#include "../../cub3D.h"
 
 static void	paint_square(t_img_info	*img_info, int color, float size)
 {
@@ -7,10 +7,10 @@ static void	paint_square(t_img_info	*img_info, int color, float size)
 	int	x;
 
 	y = -1;
-	while (y++ < MP_SSIZE * size)
+	while (y++ < 32 * size)
 	{
 		x = -1;
-		while (x++ < MP_SSIZE * size)
+		while (x++ < 32 * size)
 		{
 			pixel = (y * img_info->line_bytes) + (x * 4);
 			if (img_info->endian == 1)
@@ -37,7 +37,8 @@ void	*create_squareimg(void	*mlx_ptr, int color, float size)
 	void		*img;
 	t_img_info	info;
 
-	img = mlx_new_image(mlx_ptr, MP_SSIZE * size, MP_SSIZE * size);
+	size = size / 32;
+	img = mlx_new_image(mlx_ptr, 32 * size, 32 * size);
 	info.buffer = mlx_get_data_addr(img, &info.pixel_bits, &info.line_bytes,
 			&info.endian);
 	paint_square(&info, color, size);

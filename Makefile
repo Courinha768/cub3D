@@ -1,13 +1,13 @@
 NAME		=	cub3D
 
-SRCS		=	$(shell find srcs/ -name '*.c') get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
+SRCS		=	main.c $(shell find srcs/ -name '*.c') get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
 OBJS		=	${SRCS:.c=.o}
 
 LD_FLAGS	=	-L libft -L mlx
 MLX_FLAGS	=	-lm -lmlx -lXext -lX11
 HEAD		=	-I includes -I libft -I mlx
 CC			=	cc
-CFLAGS		=	-Wall -Werror -Wextra -g -fsanitize=address
+CFLAGS		=	-Wall -Werror -Wextra #-g -fsanitize=address
 
 .c.o		:
 	@${CC} ${CFLAGS} ${HEAD} -c $< -o ${<:.c=.o}
@@ -15,7 +15,6 @@ CFLAGS		=	-Wall -Werror -Wextra -g -fsanitize=address
 $(NAME)		:	${OBJS}
 	@make -s -C libft
 	@make -si -C mlx
-	@printf "\033[A\033[K\033[A\033[K\033[A\033[K\033[A\033[K\033[A\033[K\033[A\033[K\033[A\033[K\033[A\033[K\033[A\033[K\033[A\033[K"
 	@echo "\e[1mcub3D: binary file created\033[0m"
 	@${CC} ${CFLAGS} ${LD_FLAGS} ${OBJS} -o ${NAME} -lft ${MLX_FLAGS}
 
@@ -24,7 +23,6 @@ all			:	${NAME}
 clean		:
 	@make -s clean $@ -C libft
 	@make -si clean $@ -C mlx
-	@printf "\033[A\033[K\033[A\033[K"
 	@rm -rf ${OBJS}
 	@echo "\e[1mcub3D: Object files deleted\033[0m"
 
