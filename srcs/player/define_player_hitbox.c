@@ -1,4 +1,4 @@
-#include "../../cub3D.h"
+#include "../../includes/cub3D.h"
 
 t_hitbox	define_player_hitbox(t_position	player_position)
 {

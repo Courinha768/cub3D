@@ -1,4 +1,4 @@
-#include "../../cub3D.h"
+#include "../../includes/cub3D.h"
 
 /*
 Change where the camera is pointing.

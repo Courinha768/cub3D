@@ -1,4 +1,4 @@
-#include "../../cub3D.h"
+#include "../../includes/cub3D.h"
 
 static char	**get_map(int fd, int lc, char **map)
 {

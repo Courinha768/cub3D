@@ -1,4 +1,4 @@
-#include "../../cub3D.h"
+#include "../../includes/cub3D.h"
 
 void	paint_path(t_data *data)
 {

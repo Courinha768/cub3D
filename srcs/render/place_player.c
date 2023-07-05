@@ -1,4 +1,4 @@
-#include "../../cub3D.h"
+#include "../../includes/cub3D.h"
 
 void	place_player(t_data *data, t_position position, int img)
 {

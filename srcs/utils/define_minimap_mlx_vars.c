@@ -1,4 +1,4 @@
-#include "../../cub3D.h"
+#include "../../includes/cub3D.h"
 
 t_mlx	define_minimap_mlx_vars(t_map_info	map_info)
 {

@@ -1,4 +1,4 @@
-#include "../../cub3D.h"
+#include "../../includes/cub3D.h"
 
 int	key_pressed_hook(int keycode, t_data *data)
 {

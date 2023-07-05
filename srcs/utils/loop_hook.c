@@ -1,4 +1,4 @@
-#include "../../cub3D.h"
+#include "../../includes/cub3D.h"
 
 t_position	find_new_position(t_position wanted_position, t_position old_position, t_map_info map)
 {
@@ -35,6 +35,7 @@ int	loop_hook(t_data *data)
 				data->player.position = find_new_position(data->player.position, old_position, data->map);
 				data->player.hitbox = define_player_hitbox(data->player.position);
 			}
+			//temp while we wanna see minimap
 			place_player(data, define_player_hitbox(old_position).tl_corner ,MAP_SQUARE);
 			place_player(data, data->player.hitbox.tl_corner, PLAYER_SQUARE);
 		}

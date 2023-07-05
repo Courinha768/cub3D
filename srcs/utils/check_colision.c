@@ -1,4 +1,4 @@
-#include "../../cub3D.h"
+#include "../../includes/cub3D.h"
 
 bool	check_colision(t_hitbox hitbox, t_map_info map_info)
 {

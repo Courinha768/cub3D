@@ -1,4 +1,4 @@
-#include "../../cub3D.h"
+#include "../../includes/cub3D.h"
 
 static float	find_player_direction(t_map_info map, t_position player_position)
 {

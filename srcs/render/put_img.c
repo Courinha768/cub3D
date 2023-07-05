@@ -1,4 +1,4 @@
-#include "../../cub3D.h"
+#include "../../includes/cub3D.h"
 
 void	put_img(t_data *data, void *img, int y, int x)
 {

@@ -1,4 +1,4 @@
-#include "../../cub3D.h"
+#include "../../includes/cub3D.h"
 
 /*	prints an error mensage based on the number that it receives	*/
 bool	print_error(int error_nbr)
