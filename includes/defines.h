@@ -6,7 +6,7 @@
 # define DRAW_MINIMAP true
 
 # define SPEED 10
-# define CAMERA_SPEED 10
+# define CAMERA_SPEED 5
 # define REFRESH_RATE 120
 
 # define ERROR_ARGUMENTS_MSG "wrong number of arguments"

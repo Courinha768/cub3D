@@ -38,6 +38,8 @@ int	loop_hook(t_data *data)
 			//temp while we wanna see minimap
 			place_player(data, define_player_hitbox(old_position).tl_corner ,MAP_SQUARE);
 			place_player(data, data->player.hitbox.tl_corner, PLAYER_SQUARE);
+			draw_line(data->player.dirX + M_PI_2 / 2, data->player.position, data);
+			draw_line(data->player.dirX - M_PI_2 / 2, data->player.position, data);
 		}
 	}
 	return (0);
