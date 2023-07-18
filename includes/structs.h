@@ -14,7 +14,7 @@ typedef struct	s_img_data {
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-}				t_img_data;
+}	t_img_data;
 
 typedef struct	s_mlx {
 	void	*ptr;
@@ -25,11 +25,6 @@ typedef struct	s_position {
 	float	x;
 	float	y;
 }	t_position;
-
-typedef struct	s_vector {
-	float	x;
-	float	y;
-}	t_vector;
 
 typedef struct	s_hitbox {
 	t_position	tl_corner;
