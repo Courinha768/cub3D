@@ -26,6 +26,11 @@ typedef struct	s_position {
 	float	y;
 }	t_position;
 
+typedef struct	s_vector {
+	float	x;
+	float	y;
+}	t_vector;
+
 typedef struct	s_hitbox {
 	t_position	tl_corner;
 	t_position	tr_corner;

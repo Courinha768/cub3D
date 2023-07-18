@@ -8,18 +8,20 @@
 # define SPEED 10
 # define CAMERA_SPEED 5
 # define REFRESH_RATE 120
+# define FOV 66
 
 # define ERROR_ARGUMENTS_MSG "wrong number of arguments"
 # define ERROR_EXTENSION_MSG "file extension should be .ber"
 # define ERROR_EXIST_MSG "given file doesn't exist"
 # define ERROR_CONTRUCTION_MSG "map not correctly contructed"
 
-# define RGB_LIGHT_GREY create_trgb(0, 180, 180, 180)
+# define RGB_LIGHT_GREY create_trgb(0, 100, 100, 100)
 # define RGB_BLACK create_trgb(0, 0, 0, 0)
 # define RGB_RED create_trgb(0, 255, 0, 0)
 
 //If u need to change the players speed, change SPEED and not the PLAYER_SPEED
 # define PLAYER_SPEED (SPEED * 60 / REFRESH_RATE)
+# define FOV_RAD FOV * M_PI / 180
 
 enum {
 	ERROR_ARGUMENTS = 1,

@@ -35,11 +35,13 @@ int	loop_hook(t_data *data)
 				data->player.position = find_new_position(data->player.position, old_position, data->map);
 				data->player.hitbox = define_player_hitbox(data->player.position);
 			}
+
+
 			//temp while we wanna see minimap
-			place_player(data, define_player_hitbox(old_position).tl_corner ,MAP_SQUARE);
-			place_player(data, data->player.hitbox.tl_corner, PLAYER_SQUARE);
-			draw_line(data->player.dirX + M_PI_2 / 2, data->player.position, data);
-			draw_line(data->player.dirX - M_PI_2 / 2, data->player.position, data);
+			paint_path(data);
+			
+
+
 		}
 	}
 	return (0);
