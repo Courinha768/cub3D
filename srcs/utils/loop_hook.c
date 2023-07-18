@@ -39,6 +39,7 @@ int	loop_hook(t_data *data)
 
 			//temp while we wanna see minimap
 			paint_path(data);
+			draw_line(data, data->player.position, find_ray_colision(data->player.position, data->player.dirX, 0, data->map.map));
 			
 
 

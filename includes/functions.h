@@ -53,4 +53,6 @@ bool	check_colision(t_hitbox hitbox, t_map_info map_info);
 
 void	draw_line(t_data *data, t_position starting_position, t_position end_position);
 
+t_position	find_ray_colision(t_position starting_position, float starting_angle, float angle, char** map);
+
 #endif
