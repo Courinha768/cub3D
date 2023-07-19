@@ -9,6 +9,7 @@
 # define CAMERA_SPEED 5
 # define REFRESH_RATE 120
 # define FOV 66
+# define CAMERA_PLANE_SIZE 70
 
 # define ERROR_ARGUMENTS_MSG "wrong number of arguments"
 # define ERROR_EXTENSION_MSG "file extension should be .ber"
