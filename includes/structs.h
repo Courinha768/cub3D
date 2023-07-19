@@ -38,6 +38,7 @@ typedef struct	s_player_info {
 	t_hitbox	hitbox;
 	void		*img;
 	float		dirX;
+	float		dirY;
 }	t_player_info;
 
 typedef struct	s_map_info {
