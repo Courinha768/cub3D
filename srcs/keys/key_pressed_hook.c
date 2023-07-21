@@ -12,10 +12,6 @@ int	key_pressed_hook(int keycode, t_data *data)
 		data->keys_pressed.a = true;
 	else if (keycode == D)
 		data->keys_pressed.d = true;
-	else if (keycode == UP)
-		data->keys_pressed.up = true;
-	else if (keycode == DOWN)
-		data->keys_pressed.down = true;
 	else if (keycode == LEFT)
 		data->keys_pressed.left = true;
 	else if (keycode == RIGHT)

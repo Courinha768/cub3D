@@ -11,10 +11,6 @@ void	update_position(t_data *data)
 		move_right(data);
 	else if (data->keys_pressed.a)
 		move_left(data);
-	if (data->keys_pressed.up)
-		look_up(data);
-	else if (data->keys_pressed.down)
-		look_down(data);
 	if (data->keys_pressed.right)
 		look_right(data);
 	else if (data->keys_pressed.left)

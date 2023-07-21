@@ -52,8 +52,6 @@ typedef struct	s_key_events {
 	bool	s;
 	bool	a;
 	bool	d;
-	bool	up;
-	bool	down;
 	bool	left;
 	bool	right;
 }	t_key_events;
