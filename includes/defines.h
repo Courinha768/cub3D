@@ -9,7 +9,7 @@
 # define CAMERA_SPEED 2
 # define REFRESH_RATE 120
 # define FOV 66
-# define CAMERA_PLANE_SIZE 70
+# define CAMERA_PLANE_SIZE 90
 
 # define ERROR_ARGUMENTS_MSG "wrong number of arguments"
 # define ERROR_EXTENSION_MSG "file extension should be .ber"
@@ -55,6 +55,7 @@ enum {
 	A = 97,
 };
 
+//minimapa
 enum {
 	PLAYER_SQUARE = 1,
 	MAP_SQUARE = 2,

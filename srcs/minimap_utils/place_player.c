@@ -1,5 +1,6 @@
 #include "../../includes/cub3D.h"
 
+//minimapa
 void	place_player(t_data *data, t_position position, int img)
 {
 	if (img == PLAYER_SQUARE)

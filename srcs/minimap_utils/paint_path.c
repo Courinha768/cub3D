@@ -1,5 +1,6 @@
 #include "../../includes/cub3D.h"
 
+//minimapa
 void	paint_path(t_data *data)
 {
 	int	i;
