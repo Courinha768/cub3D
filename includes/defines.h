@@ -6,7 +6,7 @@
 # define DRAW_MINIMAP true
 
 # define SPEED 3
-# define CAMERA_SPEED 5
+# define CAMERA_SPEED 2
 # define REFRESH_RATE 120
 # define FOV 66
 # define CAMERA_PLANE_SIZE 70

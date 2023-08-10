@@ -40,22 +40,22 @@ int	loop_hook(t_data *data)
 
 			//temp while we wanna see minimap
 			paint_path(data);
-			draw_line(data, data->player.position, find_ray_colision(data->player.position, data->player.dirX, - FOV_RAD / 2 , data->map.map));
-			draw_line(data, data->player.position, find_ray_colision(data->player.position, data->player.dirX, - FOV_RAD / 4 , data->map.map));
-			draw_line(data, data->player.position, find_ray_colision(data->player.position, data->player.dirX, FOV_RAD / 2 , data->map.map));
-			draw_line(data, data->player.position, find_ray_colision(data->player.position, data->player.dirX, FOV_RAD / 4 , data->map.map));
-			float a = (CAMERA_PLANE_SIZE / 2) / tan(FOV_RAD/2);
-			t_position b;
-			t_position c;
-			t_position d;
-			b.x = data->player.position.x - (a * sin(data->player.dirX))/32;
-			b.y = data->player.position.y - (a * cos(data->player.dirX))/32;
-			c.x = b.x - ((CAMERA_PLANE_SIZE / 2) * sin(data->player.dirX + M_PI_2))/32;
-			c.y = b.y - ((CAMERA_PLANE_SIZE / 2) * cos(data->player.dirX + M_PI_2))/32;
-			d.x = b.x + ((CAMERA_PLANE_SIZE / 2) * sin(data->player.dirX + M_PI_2))/32;
-			d.y = b.y + ((CAMERA_PLANE_SIZE / 2) * cos(data->player.dirX + M_PI_2))/32;
-			draw_line(data, data->player.position, b);
-			draw_line(data, c, d);
+			// draw_line(data, data->player.position, find_ray_colision(data->player.position, data->player.dirX, - FOV_RAD / 2 , data->map.map));
+			// draw_line(data, data->player.position, find_ray_colision(data->player.position, data->player.dirX, - FOV_RAD / 4 , data->map.map));
+			// draw_line(data, data->player.position, find_ray_colision(data->player.position, data->player.dirX, FOV_RAD / 2 , data->map.map));
+			// draw_line(data, data->player.position, find_ray_colision(data->player.position, data->player.dirX, FOV_RAD / 4 , data->map.map));
+			// float a = (CAMERA_PLANE_SIZE / 2) / tan(FOV_RAD/2);
+			// t_position b;
+			// t_position c;
+			// t_position d;
+			// b.x = data->player.position.x - (a * sin(data->player.dirX))/32;
+			// b.y = data->player.position.y - (a * cos(data->player.dirX))/32;
+			// c.x = b.x - ((CAMERA_PLANE_SIZE / 2) * sin(data->player.dirX + M_PI_2))/32;
+			// c.y = b.y - ((CAMERA_PLANE_SIZE / 2) * cos(data->player.dirX + M_PI_2))/32;
+			// d.x = b.x + ((CAMERA_PLANE_SIZE / 2) * sin(data->player.dirX + M_PI_2))/32;
+			// d.y = b.y + ((CAMERA_PLANE_SIZE / 2) * cos(data->player.dirX + M_PI_2))/32;
+			// draw_line(data, data->player.position, b);
+			// draw_line(data, c, d);
 
 		}
 	}
