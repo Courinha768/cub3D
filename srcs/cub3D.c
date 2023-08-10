@@ -23,7 +23,9 @@ void	cub3D(char **map)
 	if (DRAW_MINIMAP)
 		draw_minimap(&data);
 	else
+	{
 		(void)data;
+	}
 		
 	set_mlx_hooks(&data);
 

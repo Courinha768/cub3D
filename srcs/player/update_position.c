@@ -2,7 +2,6 @@
 
 void	update_position(t_data *data)
 {
-
 	if (data->keys_pressed.w)
 		move_front(data);
 	else if (data->keys_pressed.s)

@@ -1,25 +1,5 @@
 #include "../../includes/cub3D.h"
 
-// void	draw_line(float angle, t_position starting_position, t_data *data)
-// {
-// 	void	*red_pixel;
-// 	int		a;
-// 	int		x;
-// 	int		y;
-
-// 	red_pixel = create_squareimg(data->mlx.ptr, create_trgb(0, 180, 180, 180), 1);
-// 	a = 0;
-// 	while(a++ < 200)
-// 	{
-// 		x = (int)floor((starting_position.x * 32 - ((a + 4) * sin(angle)))/32);
-// 		y = (int)floor((starting_position.y * 32 - ((a + 4) * cos(angle)))/32);
-// 		if (x >= 0 && y >= 0 && data->map.map[x][y] - 48)
-// 			break ;
-// 		put_img(data, red_pixel, starting_position.x * 32 - (a * sin(angle)),
-// 			starting_position.y * 32 - (a * cos(angle)));
-// 	}
-// }
-
 void	draw_line(t_data *data, t_position starting_position, t_position end_position)
 {
 	void	*pixel_img;
