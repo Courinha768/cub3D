@@ -30,7 +30,8 @@ int	loop_hook(t_data *data)
 		{
 			old_position = data->player.position;
 			update_position(data);
-			printf("x : %f\ny : %f\n\n", data->player.position.x, data->player.position.y);
+			// printf("dirX : %f", data->player.dirX);
+			// printf("x : %f\ny : %f\n\n", data->player.position.x, data->player.position.y);
 			if (check_colision(data->player.hitbox, data->map))
 			{
 				data->player.position = find_new_position(data->player.position, old_position, data->map);

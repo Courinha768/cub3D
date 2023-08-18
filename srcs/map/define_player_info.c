@@ -2,13 +2,13 @@
 
 static float	find_player_direction(t_map_info map, t_position player_position)
 {
-	if (map.map[(int)player_position.y][(int)player_position.x] == 'S')
+	if (map.map[(int)player_position.y][(int)player_position.x] == 'W')
 		return (M_PI_2 * 3);
-	else if (map.map[(int)player_position.y][(int)player_position.x] == 'W')
+	else if (map.map[(int)player_position.y][(int)player_position.x] == 'S')
 		return (M_PI);
-	else if (map.map[(int)player_position.y][(int)player_position.y] == 'N')
-		return (M_PI_2);
 	else if (map.map[(int)player_position.y][(int)player_position.x] == 'E')
+		return (M_PI_2);
+	else if (map.map[(int)player_position.y][(int)player_position.x] == 'N')
 		return (0);
 	else
 		return (0);

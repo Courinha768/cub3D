@@ -20,6 +20,7 @@ void	cub3D(char **map)
 	t_data	data;
 	
 	create_data_info(&data, map);
+	printf("dirX : %f", data.player.dirX);
 	if (DRAW_2D)
 		draw_2d(&data);
 	else
