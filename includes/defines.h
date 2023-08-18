@@ -55,10 +55,4 @@ enum {
 	A = 97,
 };
 
-//minimapa
-enum {
-	PLAYER_SQUARE = 1,
-	MAP_SQUARE = 2,
-};
-
 #endif

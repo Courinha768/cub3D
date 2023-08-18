@@ -14,7 +14,7 @@ void	paint_path(t_data *data)
 		{
 			if (data->map.map[i][j] != 49 && data->map.map[i][j])
 				put_img(data, data->minimap_imgs.map_square, i * 32 - 1, j * 32 - 1);
-			place_player(data, data->player.hitbox.tl_corner, PLAYER_SQUARE);
+			place_player(data, data->player.hitbox.tl_corner);
 		}
 	}
 }

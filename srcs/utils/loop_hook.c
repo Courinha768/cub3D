@@ -26,7 +26,6 @@ int	loop_hook(t_data *data)
 	if (!(frames % (10000 / REFRESH_RATE)))
 	{
 		frames = 0;
-		printf("%d\n", data->keys_pressed.general);
 		if (data->keys_pressed.general)
 		{
 			old_position = data->player.position;

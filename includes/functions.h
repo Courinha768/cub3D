@@ -48,7 +48,7 @@ bool			check_colision(t_hitbox hitbox, t_map_info map_info);
 
 //minimap fucntions
 
-void			place_player(t_data *data, t_position position, int img);
+void			place_player(t_data *data, t_position position);
 void			paint_path(t_data *data);
 void			draw_minimap(t_data *data);
 #endif

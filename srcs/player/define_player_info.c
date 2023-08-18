@@ -6,7 +6,7 @@ static float	find_player_direction(t_map_info map, t_position player_position)
 		return (M_PI_2 * 3);
 	else if (map.map[(int)player_position.y][(int)player_position.x] == 'W')
 		return (M_PI);
-	else if (map.map[(int)player_position.y][(int)player_position.x] == 'N')
+	else if (map.map[(int)player_position.x][(int)player_position.y] == 'N')
 		return (M_PI_2);
 	else if (map.map[(int)player_position.y][(int)player_position.x] == 'E')
 		return (0);
@@ -31,8 +31,8 @@ static t_position	find_player_position(t_map_info map)
 			if (map.map[j][i] == 'N' || map.map[j][i] == 'S'
 				|| map.map[j][i] == 'E' || map.map[j][i] == 'W')
 			{
-				temp_player_position.x = (float)i + 0.46875;
-				temp_player_position.y = (float)j + 0.46875;
+				temp_player_position.x = (float)j + 0.46875;
+				temp_player_position.y = (float)i + 0.46875;
 				return (temp_player_position);
 			}
 		}

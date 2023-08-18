@@ -7,5 +7,5 @@ void	draw_minimap(t_data *data)
 	data->minimap_imgs.player_square = create_squareimg(data->mlx.ptr, RGB_LIGHT_GREY, 16);
 	data->player.img = create_squareimg(data->mlx.ptr, RGB_RED, 16);
 	paint_path(data);
-	place_player(data, data->player.hitbox.tl_corner, PLAYER_SQUARE);
+	place_player(data, data->player.hitbox.tl_corner);
 }
