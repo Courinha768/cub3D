@@ -5,8 +5,8 @@
 
 # define DRAW_2D true
 
-# define SPEED 8
-# define CAMERA_SPEED 4
+# define SPEED 15
+# define CAMERA_SPEED 7
 # define REFRESH_RATE 120
 # define FOV 66
 # define CAMERA_PLANE_SIZE 90

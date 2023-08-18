@@ -1,6 +1,6 @@
 NAME		=	cub3D
 
-SRCS		=	main.c $(shell find srcs/ -name '*.c') get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
+SRCS		=	$(shell find srcs/ -name '*.c') get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
 OBJS		=	${SRCS:.c=.o}
 
 LD_FLAGS	=	-L libft -L mlx
