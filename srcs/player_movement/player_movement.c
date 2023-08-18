@@ -29,8 +29,8 @@ Direction: LEFT
 */
 void	move_left(t_data *data)
 {
-	data->player.position.x += PLAYER_SPEED * 0.01 * cos(data->player.dirX);
-	data->player.position.y -= PLAYER_SPEED * 0.01 * sin(data->player.dirX);
+	data->player.position.x -= PLAYER_SPEED * 0.01 * cos(data->player.dirX);
+	data->player.position.y += PLAYER_SPEED * 0.01 * sin(data->player.dirX);
 }
 
 /*
@@ -40,6 +40,6 @@ Direction: RIGHT
 */
 void	move_right(t_data *data)
 {
-	data->player.position.x -= PLAYER_SPEED * 0.01 * cos(data->player.dirX);
-	data->player.position.y += PLAYER_SPEED * 0.01 * sin(data->player.dirX);
+	data->player.position.x += PLAYER_SPEED * 0.01 * cos(data->player.dirX);
+	data->player.position.y -= PLAYER_SPEED * 0.01 * sin(data->player.dirX);
 }

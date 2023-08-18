@@ -1,6 +1,6 @@
 #include "../../includes/cub3D.h"
 
-t_mlx	define_minimap_mlx_vars(t_map_info	map_info)
+t_mlx	define_2d_mlx_vars(t_map_info	map_info)
 {
 	t_mlx	temp_mlx_vars;
 

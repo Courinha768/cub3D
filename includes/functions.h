@@ -17,7 +17,7 @@ t_map_info		define_map_info(char **map);
 t_player_info	define_player_info(t_map_info map);
 t_hitbox		define_player_hitbox(t_position	player_position);
 t_key_events	init_keys_pressed(void);
-t_mlx			define_minimap_mlx_vars(t_map_info	map_info);
+t_mlx			define_2d_mlx_vars(t_map_info	map_info);
 
 t_position		find_ray_colision(t_position starting_position, float starting_angle, float angle, char** map);
 
@@ -46,9 +46,9 @@ int				loop_hook(t_data *data);
 bool			check_colision(t_hitbox hitbox, t_map_info map_info);
 
 
-//minimap fucntions
+//2D fucntions
 
 void			place_player(t_data *data, t_position position);
 void			paint_path(t_data *data);
-void			draw_minimap(t_data *data);
+void			draw_2d(t_data *data);
 #endif

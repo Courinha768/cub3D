@@ -56,17 +56,17 @@ typedef struct	s_key_events {
 	bool	right;
 }	t_key_events;
 
-typedef struct s_minimap_imgs {
+typedef struct s_2d_imgs {
 	void	*map_square;
 	void	*player_square;
-}	t_minimap_imgs;
+}	t_2d_imgs;
 
 typedef struct	s_data {
 	t_map_info		map;
 	t_player_info	player;
 	t_mlx			mlx;
 	t_key_events	keys_pressed;
-	t_minimap_imgs	minimap_imgs;
+	t_2d_imgs		_2d_imgs;
 } t_data;
 
 #endif

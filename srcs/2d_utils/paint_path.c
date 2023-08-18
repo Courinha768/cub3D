@@ -1,6 +1,5 @@
 #include "../../includes/cub3D.h"
 
-//minimapa
 void	paint_path(t_data *data)
 {
 	int	i;
@@ -13,7 +12,7 @@ void	paint_path(t_data *data)
 		while (data->map.map[i][++j + 1])
 		{
 			if (data->map.map[i][j] != 49 && data->map.map[i][j])
-				put_img(data, data->minimap_imgs.map_square, i * 32 - 1, j * 32 - 1);
+				put_img(data, data->_2d_imgs.map_square, i * 32 - 1, j * 32 - 1);
 			place_player(data, data->player.hitbox.tl_corner);
 		}
 	}

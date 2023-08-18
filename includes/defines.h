@@ -3,10 +3,10 @@
 
 # define GAME_NAME	"cub3D"
 
-# define DRAW_MINIMAP true
+# define DRAW_2D true
 
-# define SPEED 3
-# define CAMERA_SPEED 2
+# define SPEED 8
+# define CAMERA_SPEED 4
 # define REFRESH_RATE 120
 # define FOV 66
 # define CAMERA_PLANE_SIZE 90

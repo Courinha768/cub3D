@@ -7,7 +7,7 @@ Direction: LEFT
 */
 void	look_left(t_data *data)
 {
-	data->player.dirX -= CAMERA_SPEED * 0.01;
+	data->player.dirX += CAMERA_SPEED * 0.01;
 	if (data->player.dirX >= 2 * M_PI)
 		data->player.dirX -= 2 * M_PI;
 }
@@ -19,7 +19,7 @@ Direction: RIGHT
 */
 void	look_right(t_data *data)
 {
-	data->player.dirX += CAMERA_SPEED * 0.01;
+	data->player.dirX -= CAMERA_SPEED * 0.01;
 	if (data->player.dirX >= 2 * M_PI)
 		data->player.dirX -= 2 * M_PI;
 }

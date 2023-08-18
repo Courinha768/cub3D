@@ -17,7 +17,7 @@ void	draw_line(t_data *data, t_position starting_position, t_position end_positi
 	pixel.y = starting_position.y * 32;
 	while (pixels)
 	{
-	    put_img(data, pixel_img, pixel.x, pixel.y);
+	    put_img(data, pixel_img, pixel.y, pixel.x);
 	    pixel.x += delta.x;
 	    pixel.y += delta.y;
 	    --pixels;

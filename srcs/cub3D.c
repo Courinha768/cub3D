@@ -20,8 +20,8 @@ void	cub3D(char **map)
 	t_data	data;
 	
 	create_data_info(&data, map);
-	if (DRAW_MINIMAP)
-		draw_minimap(&data);
+	if (DRAW_2D)
+		draw_2d(&data);
 	else
 	{
 		(void)data;
@@ -31,4 +31,17 @@ void	cub3D(char **map)
 
 	mlx_loop(data.mlx.ptr);
 	close_game(&data);
+}
+
+int	main(int ac, char **av)
+{
+	char	**map;
+
+	if (!verify_map_path(ac, av))
+		return (1);
+	map = define_map(av[1]);
+	if (!verify_map_construction(map))
+		return (1);
+	cub3D(map);
+	return (0);
 }

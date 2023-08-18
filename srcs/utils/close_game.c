@@ -6,8 +6,7 @@ int	close_game(t_data *data)
 
 	
 	//Estas sao so para a visao 2D
-	mlx_destroy_image(data->mlx.ptr, data->minimap_imgs.map_square);
-	mlx_destroy_image(data->mlx.ptr, data->minimap_imgs.player_square);
+	mlx_destroy_image(data->mlx.ptr, data->_2d_imgs.map_square);
 	mlx_destroy_image(data->mlx.ptr, data->player.img);
 
 
