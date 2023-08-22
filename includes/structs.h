@@ -1,21 +1,6 @@
 #ifndef STRUCTS_H
 # define STRUCTS_H
 
-typedef struct	s_img_info {
-	int		pixel_bits;
-	int		line_bytes;
-	int		endian;
-	char	*buffer;
-}	t_img_info;
-
-typedef struct	s_img_data {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}	t_img_data;
-
 typedef struct	s_mlx {
 	void	*ptr;
 	void	*win;
@@ -42,8 +27,6 @@ typedef struct	s_player_info {
 	t_position	plane;
 	int			map_posX;
 	int			map_posY;
-	int			start_map_posX; // for testing
-	int			start_map_posY;	// for testing
 }	t_player_info;
 
 typedef struct	s_map_info {
@@ -62,12 +45,6 @@ typedef struct	s_key_events {
 	bool	right;
 }	t_key_events;
 
-typedef struct s_2d_imgs {
-	void	*map_square;
-	void	*player_square;
-}	t_2d_imgs;
-
-// temporary
 typedef struct s_step {
 	int x;
 	int	y;
@@ -80,24 +57,21 @@ typedef struct s_ray {
 	t_position	side_dist;
 }	t_ray;
 
-// test struct
-typedef struct s_imgt {
+typedef struct s_img {
 	void	*img;
 	char	*addr;
 	int		bits;
 	int		line;
 	int		endian;
-}	t_imgt;
+}	t_img;
 
 typedef struct	s_data {
 	t_map_info		map;
 	t_player_info	player;
 	t_mlx			mlx;
-	t_mlx			mlx3d;
 	t_key_events	keys_pressed;
-	t_2d_imgs		_2d_imgs;
 	t_ray			ray;
-	t_imgt			img;
+	t_img			img;
 } t_data;
 
 #endif

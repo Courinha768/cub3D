@@ -53,6 +53,6 @@ t_player_info	define_player_info(t_map_info map)
 	temp_player.plane.y = cos(temp_player.dirX);
 	temp_player.map_posX = 0;
 	temp_player.map_posY = 0;
-	printf("view_dir.x - %f | view_dir.y - %f\nplane.x - %f | plane.y - %f\n", temp_player.view_dir.x, temp_player.view_dir.y, temp_player.plane.x, temp_player.plane.y);
+	// printf("view_dir.x - %f | view_dir.y - %f\nplane.x - %f | plane.y - %f\n", temp_player.view_dir.x, temp_player.view_dir.y, temp_player.plane.x, temp_player.plane.y);
 	return (temp_player);
 }

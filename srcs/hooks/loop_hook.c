@@ -76,13 +76,6 @@ void	raycasting(t_data *data)
 				hit = 1;
 		}
 
-		// 2d test
-		if (pixel == 0)
-		{
-			data->player.start_map_posX = data->player.map_posX;
-			data->player.start_map_posY = data->player.map_posY;
-		}
-
 		// calc wall height
 		float	prep_wall_dist = 0;
 		int		line_h = 0;
@@ -137,7 +130,7 @@ void	paint_3d_scene(t_data *data)
 	// data->img.img = mlx_new_image(data->mlx3d.ptr, SCREENW, SCREENH);
 	// data->img.addr = mlx_get_data_addr(data->img.img, &data->img.bits, &data->img.line, &data->img.endian);
 	raycasting(data);
-	mlx_put_image_to_window(data->mlx3d.ptr, data->mlx3d.win, data->img.img, 0, 0);
+	mlx_put_image_to_window(data->mlx.ptr, data->mlx.win, data->img.img, 0, 0);
 	//mlx_destroy_image(data->mlx3d.ptr, data->img.img);
 }
 
@@ -164,51 +157,6 @@ int	loop_hook(t_data *data)
 				data->player.hitbox = define_player_hitbox(data->player.position);
 			}
 
-
-
-
-
-			//temp while we wanna see 2d
-			paint_path(data);
-			// t_position end;
-			// end.x = data->player.position.x + 3 * cos(data->player.dirX);
-			// end.y = data->player.position.x + 3 * sin(data->player.dirX);
-			// draw_line(data, data->player.position, end);
-
-
-			// draw_line(data, data->player.position, find_ray_colision(data->player.position, data->player.dirX, - FOV_RAD / 2 , data->map.map));
-			// draw_line(data, data->player.position, find_ray_colision(data->player.position, data->player.dirX, - FOV_RAD / 4 , data->map.map));
-			// draw_line(data, data->player.position, find_ray_colision(data->player.position, data->player.dirX, FOV_RAD / 2 , data->map.map));
-			// // draw_line(data, data->player.position, find_ray_colision(data->player.position, data->player.dirX, FOV_RAD / 4 , data->map.map));
-			// float a = (CAMERA_PLANE_SIZE / 2) / tan(FOV_RAD/2);
-			// t_position b;
-			// // t_position c;
-			// // t_position d;
-			// b.x = data->player.position.x + (a * cos(data->player.dirX))/32;
-			// b.y = data->player.position.y + (a * sin(data->player.dirX))/32;
-			// // c.x = b.x - ((CAMERA_PLANE_SIZE / 2) * sin(data->player.dirX + M_PI_2))/32;
-			// // c.y = b.y - ((CAMERA_PLANE_SIZE / 2) * cos(data->player.dirX + M_PI_2))/32;
-			// // d.x = b.x + ((CAMERA_PLANE_SIZE / 2) * sin(data->player.dirX + M_PI_2))/32;
-			// // d.y = b.y + ((CAMERA_PLANE_SIZE / 2) * cos(data->player.dirX + M_PI_2))/32;
-			// draw_line(data, data->player.position, b, create_trgb(0, 255, 255, 0));
-			// // draw_line(data, c, d);
-
-
-			// // rays 2d test
-			// t_position	ray1;
-			// t_position	ray2;
-			// ray1.x = (float)data->player.start_map_posX;
-			// ray1.y = (float)data->player.start_map_posY;
-			// ray2.x = (float)data->player.map_posX;
-			// ray2.y = (float)data->player.map_posY; 
-			// draw_line(data, data->player.position, ray1, create_trgb(0, 0, 255, 255));
-			// draw_line(data, data->player.position, ray2, create_trgb(0, 0, 255, 255));
-			
-			// //printf("dirx: %f\n", data->player.dirX);
-
-			// printf("playerX: %f | playerY: %f\n", data->player.view_dir.x, data->player.view_dir.y);
-			// printf("rayX: %f | rayY: %f\n", data->ray.ray_dir.x, data->ray.ray_dir.y);
-			// printf("planeX: %f | planeY: %f\n\n", data->player.plane.x, data->player.plane.y);
 		}
 	}
 	return (0);

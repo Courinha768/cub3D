@@ -23,10 +23,10 @@ static	void	set_mlx_hooks(t_data *data)
 	mlx_loop_hook(data->mlx.ptr, loop_hook, data);
 }
 
-void    create_3dwin(t_data *data)
+void	create_3dwin(t_data *data)
 {
-	data->mlx3d.ptr = mlx_init();
-	data->mlx3d.win = mlx_new_window(data->mlx3d.ptr, SCREENW, SCREENH, GAME_NAME);
+	data->mlx.ptr = mlx_init();
+	data->mlx.win = mlx_new_window(data->mlx.ptr, SCREENW, SCREENH, GAME_NAME);
 }
 
 void	cub3D(char **map)
@@ -34,18 +34,8 @@ void	cub3D(char **map)
 	t_data	data;
 	
 	create_data_info(&data, map);
-	//printf("dirX : %f", data.player.dirX);
-	if (DRAW_2D)
-		draw_2d(&data);
-	else
-	{
-		(void)data;
-	}
-
 	create_3dwin(&data);
-
-
-	data.img.img = mlx_new_image(data.mlx3d.ptr, SCREENW, SCREENH);
+	data.img.img = mlx_new_image(data.mlx.ptr, SCREENW, SCREENH);
 	data.img.addr = mlx_get_data_addr(data.img.img, &data.img.bits, &data.img.line, &data.img.endian);
 	set_mlx_hooks(&data);
 	mlx_loop(data.mlx.ptr);
