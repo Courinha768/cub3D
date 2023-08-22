@@ -11,6 +11,9 @@
 # define FOV 66
 # define CAMERA_PLANE_SIZE 90
 
+# define SCREENW 640
+# define SCREENH 480
+
 # define ERROR_ARGUMENTS_MSG "wrong number of arguments"
 # define ERROR_EXTENSION_MSG "file extension should be .ber"
 # define ERROR_EXIST_MSG "given file doesn't exist"

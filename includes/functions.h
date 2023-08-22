@@ -28,7 +28,7 @@ int				key_release_hook(int keycode, t_data *data);
 
 void			*create_squareimg(void	*mlx_ptr, int color, float size);
 int				create_trgb(int t, int r, int g, int b);
-void			draw_line(t_data *data, t_position starting_position, t_position end_position);
+void			draw_line(t_data *data, t_position starting_position, t_position end_position, int color);
 void			put_img(t_data *data, void *img, int y, int x);
 
 void			update_position(t_data *data);
@@ -45,10 +45,17 @@ int				loop_hook(t_data *data);
 
 bool			check_colision(t_hitbox hitbox, t_map_info map_info);
 
-
 //2D fucntions
 
 void			place_player(t_data *data, t_position position);
 void			paint_path(t_data *data);
 void			draw_2d(t_data *data);
+
+//3D functions
+
+void	my_pixel_put(t_data *data, int x, int y, int color);
+void	raycasting(t_data *data);
+void	paint_3d_scene(t_data *data);
+void    create_3dwin(t_data *data);
+
 #endif

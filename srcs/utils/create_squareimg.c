@@ -44,3 +44,16 @@ void	*create_squareimg(void	*mlx_ptr, int color, float size)
 	paint_square(&info, color, size);
 	return (img);
 }
+
+// void	*create_lineimg(void	*mlx_ptr, int color, float size)
+// {
+// 	void		*img;
+// 	t_img_info	info;
+
+// 	size = size / 32;
+// 	img = mlx_new_image(mlx_ptr, 32 * size, 32 * size);
+// 	info.buffer = mlx_get_data_addr(img, &info.pixel_bits, &info.line_bytes,
+// 			&info.endian);
+// 	paint_square(&info, color, size);
+// 	return (img);
+// }

@@ -38,6 +38,12 @@ typedef struct	s_player_info {
 	t_hitbox	hitbox;
 	void		*img;
 	float		dirX;
+	t_position	view_dir;
+	t_position	plane;
+	int			map_posX;
+	int			map_posY;
+	int			start_map_posX; // for testing
+	int			start_map_posY;	// for testing
 }	t_player_info;
 
 typedef struct	s_map_info {
@@ -61,12 +67,37 @@ typedef struct s_2d_imgs {
 	void	*player_square;
 }	t_2d_imgs;
 
+// temporary
+typedef struct s_step {
+	int x;
+	int	y;
+}	t_step;
+
+typedef struct s_ray {
+	t_position	ray_dir;
+	t_step		step;
+	t_position	delta;
+	t_position	side_dist;
+}	t_ray;
+
+// test struct
+typedef struct s_imgt {
+	void	*img;
+	char	*addr;
+	int		bits;
+	int		line;
+	int		endian;
+}	t_imgt;
+
 typedef struct	s_data {
 	t_map_info		map;
 	t_player_info	player;
 	t_mlx			mlx;
+	t_mlx			mlx3d;
 	t_key_events	keys_pressed;
 	t_2d_imgs		_2d_imgs;
+	t_ray			ray;
+	t_imgt			img;
 } t_data;
 
 #endif

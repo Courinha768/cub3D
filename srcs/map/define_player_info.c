@@ -47,5 +47,10 @@ t_player_info	define_player_info(t_map_info map)
 	temp_player.position = find_player_position(map);
 	temp_player.dirX = find_player_direction(map, temp_player.position);
 	temp_player.hitbox = define_player_hitbox(temp_player.position);
+	temp_player.view_dir.x = cos(temp_player.dirX);
+	temp_player.view_dir.y = sin(temp_player.dirX);
+	temp_player.plane.x = -sin(temp_player.dirX);
+	temp_player.plane.y = cos(temp_player.dirX); 
+	//printf("view_dir.x - %f | view_dir.y - %f\nplane.x - %f | plane.y - %f\n", temp_player.view_dir.x, temp_player.view_dir.y, temp_player.plane.x, temp_player.plane.y);
 	return (temp_player);
 }

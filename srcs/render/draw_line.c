@@ -1,13 +1,13 @@
 #include "../../includes/cub3D.h"
 
-void	draw_line(t_data *data, t_position starting_position, t_position end_position)
+void	draw_line(t_data *data, t_position starting_position, t_position end_position, int color)
 {
 	void	*pixel_img;
 	t_position	delta;
 	t_position	pixel;
 	int		pixels;
 
-	pixel_img = create_squareimg(data->mlx.ptr, create_trgb(0, 180, 180, 180), 1);
+	pixel_img = create_squareimg(data->mlx.ptr, color, 1);
 	delta.y = (end_position.y * 32 - starting_position.y * 32);
 	delta.x = (end_position.x * 32 - starting_position.x * 32);
 	pixels = sqrt((delta.x * delta.x) + (delta.y * delta.y));
