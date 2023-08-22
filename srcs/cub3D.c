@@ -44,8 +44,10 @@ void	cub3D(char **map)
 
 	create_3dwin(&data);
 
-	set_mlx_hooks(&data);
 
+	data.img.img = mlx_new_image(data.mlx3d.ptr, SCREENW, SCREENH);
+	data.img.addr = mlx_get_data_addr(data.img.img, &data.img.bits, &data.img.line, &data.img.endian);
+	set_mlx_hooks(&data);
 	mlx_loop(data.mlx.ptr);
 	close_game(&data);
 }
