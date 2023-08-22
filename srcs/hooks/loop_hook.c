@@ -25,7 +25,7 @@ void	raycasting(t_data *data)
 	while (pixel < SCREENW)
 	{
 		// calc ray position and direction
-		cameraX = 2 * pixel / (float)SCREENW - 1;
+		cameraX = 2 * pixel / (float)(SCREENW) - 1;
 		data->ray.ray_dir.x = data->player.view_dir.x + data->player.plane.x * cameraX;
 		data->ray.ray_dir.y = data->player.view_dir.y + data->player.plane.y * cameraX;
 		data->player.map_posX = (int)data->player.position.x;
@@ -42,7 +42,7 @@ void	raycasting(t_data *data)
 		else
 		{
 			data->ray.step.x = 1;
-			data->ray.side_dist.x = (data->player.map_posX + 1.0 - data->player.position.x) * data->ray.delta.x;
+			data->ray.side_dist.x = (data->player.map_posX + 1 - data->player.position.x) * data->ray.delta.x;
 		}
 		if (data->ray.ray_dir.y < 0)
 		{
@@ -52,7 +52,7 @@ void	raycasting(t_data *data)
 		else
 		{
 			data->ray.step.y = 1;
-			data->ray.side_dist.y = (data->player.map_posY + 1.0 - data->player.position.y) * data->ray.delta.y;
+			data->ray.side_dist.y = (data->player.map_posY + 1 - data->player.position.y) * data->ray.delta.y;
 		}
 
 		// step until finding wall
@@ -108,7 +108,7 @@ void	raycasting(t_data *data)
 		while (j < SCREENH)
 		{
 			if (j < start)
-				my_pixel_put(data, pixel, j, create_trgb(0, 180, 180, 180));
+				my_pixel_put(data, pixel, j, create_trgb(0, 0, 255, 255));
 			else if (j > end)
 				my_pixel_put(data, pixel, j, create_trgb(0, 180, 180, 180));
 			else
@@ -184,8 +184,8 @@ int	loop_hook(t_data *data)
 			t_position b;
 			// t_position c;
 			// t_position d;
-			b.x = data->player.position.x - (a * sin(data->player.dirX))/32;
-			b.y = data->player.position.y - (a * cos(data->player.dirX))/32;
+			b.x = data->player.position.x + (a * cos(data->player.dirX))/32;
+			b.y = data->player.position.y + (a * sin(data->player.dirX))/32;
 			// c.x = b.x - ((CAMERA_PLANE_SIZE / 2) * sin(data->player.dirX + M_PI_2))/32;
 			// c.y = b.y - ((CAMERA_PLANE_SIZE / 2) * cos(data->player.dirX + M_PI_2))/32;
 			// d.x = b.x + ((CAMERA_PLANE_SIZE / 2) * sin(data->player.dirX + M_PI_2))/32;
@@ -203,6 +203,12 @@ int	loop_hook(t_data *data)
 			ray2.y = (float)data->player.map_posY; 
 			draw_line(data, data->player.position, ray1, create_trgb(0, 0, 255, 255));
 			draw_line(data, data->player.position, ray2, create_trgb(0, 0, 255, 255));
+			
+			//printf("dirx: %f\n", data->player.dirX);
+
+			printf("playerX: %f | playerY: %f\n", data->player.view_dir.x, data->player.view_dir.y);
+			printf("rayX: %f | rayY: %f\n", data->ray.ray_dir.x, data->ray.ray_dir.y);
+			printf("planeX: %f | planeY: %f\n\n", data->player.plane.x, data->player.plane.y);
 		}
 	}
 	return (0);
