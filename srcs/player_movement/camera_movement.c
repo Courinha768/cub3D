@@ -18,7 +18,6 @@ void	look_left(t_data *data)
 	data->ray.ray_dir.y = sin(data->player.dirX);
 	data->player.plane.x = -sin(data->player.dirX);
 	data->player.plane.y = cos(data->player.dirX);
-	//printf("LF -> rayX - %f | ray Y - %f | planeX - %f | planeY - %f\n", data->ray.ray_dir.x, data->ray.ray_dir.y, data->player.plane.x, data->player.plane.y);
 }
 
 
@@ -40,5 +39,4 @@ void	look_right(t_data *data)
 	data->ray.ray_dir.y = sin(data->player.dirX);
 	data->player.plane.x = -sin(data->player.dirX);
 	data->player.plane.y = cos(data->player.dirX);
-	//printf("LR -> rayX - %f | ray Y - %f | planeX - %f | planeY - %f\n", data->ray.ray_dir.x, data->ray.ray_dir.y, data->player.plane.x, data->player.plane.y);
 }

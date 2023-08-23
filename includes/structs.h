@@ -55,7 +55,13 @@ typedef struct s_ray {
 	t_step		step;
 	t_position	delta;
 	t_position	side_dist;
+	int			wall_side;
 }	t_ray;
+
+typedef struct s_draw{
+	int	start;
+	int	end;
+}	t_draw;
 
 typedef struct s_img {
 	void	*img;
@@ -72,6 +78,7 @@ typedef struct	s_data {
 	t_key_events	keys_pressed;
 	t_ray			ray;
 	t_img			img;
+	t_draw			draw;
 } t_data;
 
 #endif

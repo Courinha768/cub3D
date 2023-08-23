@@ -13,6 +13,9 @@ static	void	create_data_info(t_data *data, char **map)
 	data->ray.side_dist.y = 0;
 	data->ray.step.x = 0;
 	data->ray.step.y = 0;
+	data->ray.wall_side = 0;
+	data->draw.start = 0;
+	data->draw.end = 0;
 }
 
 static	void	set_mlx_hooks(t_data *data)
