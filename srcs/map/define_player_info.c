@@ -3,13 +3,13 @@
 static float	find_player_direction(t_map_info map, t_position player_position)
 {
 	if (map.map[(int)player_position.y][(int)player_position.x] == 'W')
-		return (M_PI_2 * 3);
-	else if (map.map[(int)player_position.y][(int)player_position.x] == 'S')
 		return (M_PI);
+	else if (map.map[(int)player_position.y][(int)player_position.x] == 'S')
+		return (3 * M_PI_2);
 	else if (map.map[(int)player_position.y][(int)player_position.x] == 'E')
-		return (M_PI_2);
-	else if (map.map[(int)player_position.y][(int)player_position.x] == 'N')
 		return (0);
+	else if (map.map[(int)player_position.y][(int)player_position.x] == 'N')
+		return (M_PI_2);
 	else
 		return (0);
 }
@@ -47,5 +47,11 @@ t_player_info	define_player_info(t_map_info map)
 	temp_player.position = find_player_position(map);
 	temp_player.dirX = find_player_direction(map, temp_player.position);
 	temp_player.hitbox = define_player_hitbox(temp_player.position);
+	temp_player.view_dir.x = cos(temp_player.dirX);
+	temp_player.view_dir.y = sin(temp_player.dirX);
+	temp_player.plane.x = -sin(temp_player.dirX);
+	temp_player.plane.y = cos(temp_player.dirX);
+	temp_player.map_posX = 0;
+	temp_player.map_posY = 0;
 	return (temp_player);
 }

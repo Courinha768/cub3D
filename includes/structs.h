@@ -1,21 +1,6 @@
 #ifndef STRUCTS_H
 # define STRUCTS_H
 
-typedef struct	s_img_info {
-	int		pixel_bits;
-	int		line_bytes;
-	int		endian;
-	char	*buffer;
-}	t_img_info;
-
-typedef struct	s_img_data {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}	t_img_data;
-
 typedef struct	s_mlx {
 	void	*ptr;
 	void	*win;
@@ -38,6 +23,10 @@ typedef struct	s_player_info {
 	t_hitbox	hitbox;
 	void		*img;
 	float		dirX;
+	t_position	view_dir;
+	t_position	plane;
+	int			map_posX;
+	int			map_posY;
 }	t_player_info;
 
 typedef struct	s_map_info {
@@ -56,17 +45,40 @@ typedef struct	s_key_events {
 	bool	right;
 }	t_key_events;
 
-typedef struct s_2d_imgs {
-	void	*map_square;
-	void	*player_square;
-}	t_2d_imgs;
+typedef struct s_step {
+	int x;
+	int	y;
+}	t_step;
+
+typedef struct s_ray {
+	t_position	ray_dir;
+	t_step		step;
+	t_position	delta;
+	t_position	side_dist;
+	int			wall_side;
+}	t_ray;
+
+typedef struct s_draw{
+	int	start;
+	int	end;
+}	t_draw;
+
+typedef struct s_img {
+	void	*img;
+	char	*addr;
+	int		bits;
+	int		line;
+	int		endian;
+}	t_img;
 
 typedef struct	s_data {
 	t_map_info		map;
 	t_player_info	player;
 	t_mlx			mlx;
 	t_key_events	keys_pressed;
-	t_2d_imgs		_2d_imgs;
+	t_ray			ray;
+	t_img			img;
+	t_draw			draw;
 } t_data;
 
 #endif
