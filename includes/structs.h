@@ -11,6 +11,11 @@ typedef struct	s_position {
 	float	y;
 }	t_position;
 
+typedef struct s_step {
+	int x;
+	int	y;
+}	t_step;
+
 typedef struct	s_hitbox {
 	t_position	tl_corner;
 	t_position	tr_corner;
@@ -45,10 +50,6 @@ typedef struct	s_key_events {
 	bool	right;
 }	t_key_events;
 
-typedef struct s_step {
-	int x;
-	int	y;
-}	t_step;
 
 typedef struct s_ray {
 	t_position	ray_dir;
