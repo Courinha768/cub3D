@@ -3,16 +3,12 @@
 
 # define GAME_NAME	"cub3D"
 
-# define DRAW_2D true
-
-# define SPEED 6
+# define SPEED 5
 # define CAMERA_SPEED 5
 # define REFRESH_RATE 120
-# define FOV 66
-# define CAMERA_PLANE_SIZE 90
 
-# define SCREENW 640
-# define SCREENH 480
+# define SCREENW 1280
+# define SCREENH 720
 
 # define ERROR_ARGUMENTS_MSG "wrong number of arguments"
 # define ERROR_EXTENSION_MSG "file extension should be .ber"
@@ -25,7 +21,6 @@
 
 //If u need to change the players speed, change SPEED and not the PLAYER_SPEED
 # define PLAYER_SPEED (SPEED * 60 / REFRESH_RATE)
-# define FOV_RAD FOV * M_PI / 180 
 
 enum {
 	ERROR_ARGUMENTS = 1,
