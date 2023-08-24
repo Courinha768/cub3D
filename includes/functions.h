@@ -28,6 +28,7 @@ t_player_info	define_player_info(t_map_info map);
 t_hitbox		define_player_hitbox(t_position	player_position);
 void			update_position(t_data *data);
 bool			check_colision(t_hitbox hitbox, t_map_info map_info);
+t_position		find_new_position(t_position wanted_position, t_position old_position, t_map_info map);
 
 //Movement Functions
 

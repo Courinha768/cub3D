@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cub3D.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/24 17:14:35 by aappleto          #+#    #+#             */
+/*   Updated: 2023/08/24 17:17:53 by aappleto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/cub3D.h"
 
 static	void	create_data_info(t_data *data, char **map)
@@ -32,14 +44,15 @@ void	create_3dwin(t_data *data)
 	data->mlx.win = mlx_new_window(data->mlx.ptr, SCREENW, SCREENH, GAME_NAME);
 }
 
-void	cub3D(char **map)
+void	cub3d(char **map)
 {
 	t_data	data;
-	
+
 	create_data_info(&data, map);
 	create_3dwin(&data);
 	data.img.img = mlx_new_image(data.mlx.ptr, SCREENW, SCREENH);
-	data.img.addr = mlx_get_data_addr(data.img.img, &data.img.bits, &data.img.line, &data.img.endian);
+	data.img.addr = mlx_get_data_addr(data.img.img, &data.img.bits,
+			&data.img.line, &data.img.endian);
 	set_mlx_hooks(&data);
 	mlx_loop(data.mlx.ptr);
 	close_game(&data);
@@ -54,6 +67,6 @@ int	main(int ac, char **av)
 	map = define_map(av[1]);
 	if (!verify_map_construction(map))
 		return (1);
-	cub3D(map);
+	cub3d(map);
 	return (0);
 }

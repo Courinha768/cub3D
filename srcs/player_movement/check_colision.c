@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_colision.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/24 17:20:50 by aappleto          #+#    #+#             */
+/*   Updated: 2023/08/24 17:22:48 by aappleto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/cub3D.h"
 
 bool	check_colision(t_hitbox hitbox, t_map_info map_info)
@@ -10,5 +22,5 @@ bool	check_colision(t_hitbox hitbox, t_map_info map_info)
 		return (true);
 	if (map_info.map[(int)hitbox.tr_corner.y][(int)hitbox.tr_corner.x] == 49)
 		return (true);
-	return (false);	
+	return (false);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   camera_movement.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/24 17:20:44 by aappleto          #+#    #+#             */
+/*   Updated: 2023/08/24 17:21:35 by aappleto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/cub3D.h"
 
 /*
@@ -19,7 +31,6 @@ void	look_left(t_data *data)
 	data->player.plane.x = -sin(data->player.dirX);
 	data->player.plane.y = cos(data->player.dirX);
 }
-
 
 /*
 Change where the camera is pointing.

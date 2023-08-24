@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   define_player_info.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/24 17:19:55 by aappleto          #+#    #+#             */
+/*   Updated: 2023/08/24 17:20:24 by aappleto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/cub3D.h"
 
-static float	find_player_direction(t_map_info map, t_position player_position)
+static float	find_player_direction(t_map_info map,
+		t_position player_position)
 {
 	if (map.map[(int)player_position.y][(int)player_position.x] == 'W')
 		return (M_PI);
@@ -38,7 +51,7 @@ static t_position	find_player_position(t_map_info map)
 		}
 	}
 	return (temp_player_position);
-} 
+}
 
 t_player_info	define_player_info(t_map_info map)
 {
