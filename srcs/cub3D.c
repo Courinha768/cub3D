@@ -45,22 +45,13 @@ void	create_3dwin(t_data *data)
 	data->mlx.win = mlx_new_window(data->mlx.ptr, SCREENW, SCREENH, GAME_NAME);
 }
 
-void	load_walls(t_data *data, char *path)
+void	load_textures(t_data *data, t_img *wall, char *path)
 {
 	int	tex_w = TEXW;
 	int	tex_h = TEXH;
 
-	data->wall1.img = mlx_xpm_file_to_image(data->mlx.ptr, path, &tex_w, &tex_h);
-	data->wall1.addr = mlx_get_data_addr(data->wall1.img, &data->wall1.bits, &data->wall1.line, &data->wall1.endian);
-}
-
-void	load_wall2(t_data *data, char *path)
-{
-	int	tex_w = TEXW;
-	int	tex_h = TEXH;
-
-	data->wall2.img = mlx_xpm_file_to_image(data->mlx.ptr, path, &tex_w, &tex_h);
-	data->wall2.addr = mlx_get_data_addr(data->wall2.img, &data->wall2.bits, &data->wall2.line, &data->wall2.endian);
+	wall->img = mlx_xpm_file_to_image(data->mlx.ptr, path, &tex_w, &tex_h);
+	wall->addr = mlx_get_data_addr(wall->img, &wall->bits, &wall->line, &wall->endian);
 }
 
 void	cub3d(char **map)
@@ -72,8 +63,10 @@ void	cub3d(char **map)
 	data.scene.img = mlx_new_image(data.mlx.ptr, SCREENW, SCREENH);
 	data.scene.addr = mlx_get_data_addr(data.scene.img, &data.scene.bits,
 			&data.scene.line, &data.scene.endian);
-	load_walls(&data, "./textures/wall1.xpm");
-	load_wall2(&data, "./textures/wall2.xpm");
+	load_textures(&data, &data.wall1, "./textures/color1_1.xpm");
+	load_textures(&data, &data.wall2, "./textures/color2_1.xpm");
+	load_textures(&data, &data.wall3, "./textures/color3_1.xpm");
+	load_textures(&data, &data.wall4, "./textures/color4_1.xpm");
 	set_mlx_hooks(&data);
 	mlx_loop(data.mlx.ptr);
 	close_game(&data);

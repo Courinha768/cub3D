@@ -50,7 +50,6 @@ typedef struct	s_key_events {
 	bool	right;
 }	t_key_events;
 
-
 typedef struct s_ray {
 	t_position	ray_dir;
 	t_step		step;
@@ -90,6 +89,8 @@ typedef struct	s_data {
 	t_img			scene;
 	t_img			wall1;
 	t_img			wall2;
+	t_img			wall3;
+	t_img			wall4;
 	t_draw			draw;
 	t_tex			tex;
 } t_data;

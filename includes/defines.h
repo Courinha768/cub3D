@@ -10,8 +10,8 @@
 # define SCREENW 1280
 # define SCREENH 720
 
-# define TEXW 128
-# define TEXH 128
+# define TEXW 64
+# define TEXH 64
 
 # define ERROR_ARGUMENTS_MSG "wrong number of arguments"
 # define ERROR_EXTENSION_MSG "file extension should be .ber"
