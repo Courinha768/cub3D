@@ -3,12 +3,15 @@
 
 # define GAME_NAME	"cub3D"
 
-# define SPEED 5
+# define SPEED 10
 # define CAMERA_SPEED 5
 # define REFRESH_RATE 120
 
 # define SCREENW 1280
 # define SCREENH 720
+
+# define TEXW 128
+# define TEXH 128
 
 # define ERROR_ARGUMENTS_MSG "wrong number of arguments"
 # define ERROR_EXTENSION_MSG "file extension should be .ber"

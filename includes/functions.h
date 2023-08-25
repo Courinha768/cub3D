@@ -43,12 +43,17 @@ void			look_left(t_data *data);
 //3D functions
 
 void    draw_scene(t_data *data, int pixel_w);
+void	get_tex_data(t_data *data);
 void    calc_wall_height(t_data *data);
 void    find_wall(t_data *data);
 void    calc_step_and_side(t_data *data);
 void	render_3d_scene(t_data *data);
 void    create_3dwin(t_data *data);
 
-void	my_pixel_put(t_data *data, int x, int y, int color);
+void	my_pixel_put(t_img *img, int x, int y, int color);
+unsigned int	get_color(t_img *img, int x, int y);
+
+
+void	load_walls(t_data *data, char *path);
 
 #endif

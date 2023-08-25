@@ -57,6 +57,7 @@ typedef struct s_ray {
 	t_position	delta;
 	t_position	side_dist;
 	int			wall_side;
+	float		prep_wall_dist;
 }	t_ray;
 
 typedef struct s_draw{
@@ -72,14 +73,25 @@ typedef struct s_img {
 	int		endian;
 }	t_img;
 
+typedef struct s_tex {
+	float	wall_line_h;
+	float	step;
+	int		tex_x;
+	int		tex_y;
+	int		color;
+}	t_tex;
+
 typedef struct	s_data {
 	t_map_info		map;
 	t_player_info	player;
 	t_mlx			mlx;
 	t_key_events	keys_pressed;
 	t_ray			ray;
-	t_img			img;
+	t_img			scene;
+	t_img			wall1;
+	t_img			wall2;
 	t_draw			draw;
+	t_tex			tex;
 } t_data;
 
 #endif
