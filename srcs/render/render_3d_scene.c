@@ -37,7 +37,6 @@ void	render_3d_scene(t_data *data)
 		calc_wall_height(data);
 		draw_scene(data, pixel_w);
 	}
-	mlx_put_image_to_window(data->mlx.ptr, data->mlx.win, data->scene.img, 0, 0);
 }
 
 void	draw_scene(t_data *data, int pixel_w)

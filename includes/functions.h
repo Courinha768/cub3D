@@ -40,6 +40,13 @@ void			move_left(t_data *data);
 void			look_right(t_data *data);
 void			look_left(t_data *data);
 
+// minimap
+
+void    render_minimap(t_data *data);
+void    draw_square(t_data *data, int x, int y, int color);
+void    draw_player(t_data *data, float x, float y, int color);
+void	draw_line(t_data *data, t_position starting_position, t_position end_position, int color);
+
 //3D functions
 
 void	draw_wall(t_data *data, int pixel_w, int pixel_h);
