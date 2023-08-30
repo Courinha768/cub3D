@@ -6,7 +6,10 @@ static char	**get_map(int fd, int lc, char **map)
 
 	line = get_next_line(fd);
 	while (line && line[0] != ' ' && line[0] != 49)
+	{
+		free(line);
 		line = get_next_line(fd);
+	}
 	if (line)
 		map = get_map(fd, (lc + 1), map);
 	else if (!map)
@@ -24,6 +27,7 @@ char	**define_map(char *file_path)
 	int		fd;
 
 	fd = open(file_path, O_RDONLY);
+	free(get_next_line(fd));
 	map = get_map(fd, 0, NULL);
 	close(fd);
 	return (map);

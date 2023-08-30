@@ -34,6 +34,16 @@ typedef struct	s_player_info {
 	int			map_posY;
 }	t_player_info;
 
+typedef struct	s_map_info_bool {
+	bool	NO_texture_path;
+	bool	SO_texture_path;
+	bool	WE_texture_path;
+	bool	EA_texture_path;
+	bool	floor_color;
+	bool	ceiling_color;
+	bool	map;
+}	t_map_info_bool;
+
 typedef struct	s_map_info {
 	char			**map;
 	unsigned int	height;
@@ -44,16 +54,8 @@ typedef struct	s_map_info {
 	char			*EA_texture_path;
 	int				floor_color;
 	int				ceiling_color;
+	t_map_info_bool	exist;
 }	t_map_info;
-
-typedef struct	s_map_info_bool {
-	bool	NO_texture_path;
-	bool	SO_texture_path;
-	bool	WE_texture_path;
-	bool	EA_texture_path;
-	bool	floor_color;
-	bool	ceiling_color;
-}	t_map_info_bool;
 
 typedef struct	s_key_events {
 	int		general;

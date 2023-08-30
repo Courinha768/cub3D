@@ -10,10 +10,9 @@
 # define SCREENW 1280
 # define SCREENH 720
 
-# define ERROR_ARGUMENTS_MSG "wrong number of arguments"
-# define ERROR_EXTENSION_MSG "file extension should be .ber"
-# define ERROR_EXIST_MSG "given file doesn't exist"
-# define ERROR_CONTRUCTION_MSG "map not correctly contructed"
+#define FILE_DOESNT_EXIST "Given file doesn't exist"
+#define MAP_NOT_CONSTRUCTED_CORRECTLY "info error"
+#define NBR_ARGS "Incorrect number of arguments"
 
 # define RGB_LIGHT_GREY create_trgb(0, 100, 100, 100)
 # define RGB_BLACK create_trgb(0, 0, 0, 0)

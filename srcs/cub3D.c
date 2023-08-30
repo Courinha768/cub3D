@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:14:35 by aappleto          #+#    #+#             */
-/*   Updated: 2023/08/30 16:49:23 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/08/30 17:51:33 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,21 @@ void	cub3d(t_map_info map_info)
 int	main(int ac, char **av)
 {
 	t_map_info	map_info;
-	(void)ac;
 
+	map_info.exist = init_info_bool();
+	if (ac != 2)
+		c3d_error(NBR_ARGS, 0, NULL, &map_info);
 	map_info = parsing(av[1]);
+
+
+	printf("NO: %s\n", map_info.NO_texture_path);
+	printf("SO: %s\n", map_info.SO_texture_path);
+	printf("WE: %s\n", map_info.WE_texture_path);
+	printf("EA: %s\n\n", map_info.EA_texture_path);
+	int	i = -1;
+	while (map_info.map[++i])
+		printf("%s", map_info.map[i]);
+
+	
 	cub3d(map_info);
 }

@@ -11,7 +11,7 @@ static bool	verify_file_existance(char *file_path)
 	return (true);
 }
 
-static t_map_info_bool	init_info_bool(void)
+t_map_info_bool	init_info_bool(void)
 {
 	t_map_info_bool	temp_info;
 
@@ -21,6 +21,7 @@ static t_map_info_bool	init_info_bool(void)
 	temp_info.EA_texture_path = false;
 	temp_info.floor_color = false;
 	temp_info.ceiling_color = false;
+	temp_info.map = false;
 	return (temp_info);
 }
 
@@ -67,6 +68,7 @@ int	find_color(char *line)
 	free(color_numbers_char[0]);
 	free(color_numbers_char[1]);
 	free(color_numbers_char[2]);
+	free(color_numbers_char);
 	free(new_line);
 	if (color_numbers[0] < 0 || color_numbers[0] > 255
 			|| color_numbers[1] < 0 || color_numbers[1] > 255
@@ -86,31 +88,33 @@ void	parse_line(char *line, t_map_info *map_info, t_map_info_bool *info)
 	else if (!ft_strncmp(line, "EA ", 3))
 		set_parse_vars(line, &map_info->EA_texture_path, &info->EA_texture_path);
 	else if (!ft_strncmp(line, "F ", 2))
+	{
 		map_info->floor_color = find_color(line);
+		map_info->exist.floor_color = true;
+	}
 	else if (!ft_strncmp(line, "C ", 2))
+	{
 		map_info->ceiling_color = find_color(line);
+		map_info->exist.ceiling_color = true;
+	}
 	else
-		(void)line;//exit
+		c3d_error(MAP_NOT_CONSTRUCTED_CORRECTLY, 3, line, map_info);
 }
 
 t_map_info	parsing(char *file_path)
 {
 	int				fd;
-	t_map_info_bool	info;
 	char			*line;
 	t_map_info		map_info;
 
+	map_info.exist = init_info_bool();
 	if (!verify_file_existance(file_path))
-	{
-	
-	}
-
+		c3d_error(FILE_DOESNT_EXIST, 0, NULL, &map_info);
 	fd = open(file_path, O_RDONLY);
-	info = init_info_bool();
 	line = get_next_valid_line(fd);
-	while (!is_complete(info) && line)
+	while (!is_complete(map_info.exist) && line)
 	{
-		parse_line(line, &map_info, &info);
+		parse_line(line, &map_info, &map_info.exist);
 		free(line);
 		line = get_next_valid_line(fd);
 	}
@@ -118,6 +122,7 @@ t_map_info	parsing(char *file_path)
 		free(line);
 	close(fd);
 	map_info.map = define_map(file_path);
+	map_info.exist.map = true;
 	map_info.height = 0;
 	map_info.width = 0;
 	while (map_info.map[map_info.height])

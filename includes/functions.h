@@ -55,5 +55,7 @@ void	my_pixel_put(t_data *data, int x, int y, int color);
 
 
 t_map_info	parsing(char *file_path);
+void	c3d_error(char *error, int fd, char *line, t_map_info *map_info);
+t_map_info_bool	init_info_bool(void);
 
 #endif
