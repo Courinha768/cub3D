@@ -51,4 +51,9 @@ void    create_3dwin(t_data *data);
 
 void	my_pixel_put(t_data *data, int x, int y, int color);
 
+
+
+
+t_map_info	parsing(char *file_path);
+
 #endif

@@ -5,6 +5,8 @@ static char	**get_map(int fd, int lc, char **map)
 	char	*line;
 
 	line = get_next_line(fd);
+	while (line && line[0] != ' ' && line[0] != 49)
+		line = get_next_line(fd);
 	if (line)
 		map = get_map(fd, (lc + 1), map);
 	else if (!map)
