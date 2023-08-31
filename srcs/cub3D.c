@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:14:35 by aappleto          #+#    #+#             */
-/*   Updated: 2023/08/31 15:03:06 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/08/31 15:06:17 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,6 @@ void	cub3d(t_map_info map_info)
 	close_game(&data);
 }
 
-
-
 int	main(int ac, char **av)
 {
 	t_map_info	map_info;
@@ -68,6 +66,12 @@ int	main(int ac, char **av)
 	if (ac != 2)
 		c3d_error(NBR_ARGS, 0, NULL, &map_info);
 	map_info = parsing(av[1]);
+	if (check_map_construction1(map_info)
+		|| check_map_construction2(map_info)
+		|| check_map_construction3(map_info))
+		c3d_error(MAP_NOT_CONSTRUCTED_CORRECTLY, 0, NULL, &map_info);
+	cub3d(map_info);
+}
 
 	// printf("NO: %s\n", map_info.NO_texture_path);
 	// printf("SO: %s\n", map_info.SO_texture_path);
@@ -76,11 +80,3 @@ int	main(int ac, char **av)
 	// int	i = -1;
 	// while (map_info.map[++i]) 
 	// 	printf("%s", map_info.map[i]);
-	
-	if (check_map_construction1(map_info)
-			|| check_map_construction2(map_info)
-			|| check_map_construction3(map_info))
-		c3d_error(MAP_NOT_CONSTRUCTED_CORRECTLY, 0, NULL, &map_info);
-
-	cub3d(map_info);
-}

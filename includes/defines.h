@@ -13,6 +13,7 @@
 #define FILE_DOESNT_EXIST "Given file doesn't exist"
 #define MAP_NOT_CONSTRUCTED_CORRECTLY "Map not constructed correctly"
 #define NBR_ARGS "Incorrect number of arguments"
+#define INVALID_COLORS "Given color for floor/ceiling doesn't exist"
 
 # define RGB_LIGHT_GREY create_trgb(0, 100, 100, 100)
 # define RGB_BLACK create_trgb(0, 0, 0, 0)
