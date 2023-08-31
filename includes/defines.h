@@ -13,6 +13,8 @@
 # define TEXW 64
 # define TEXH 64
 
+# define MINIMAP_SCALE 16
+
 # define ERROR_ARGUMENTS_MSG "wrong number of arguments"
 # define ERROR_EXTENSION_MSG "file extension should be .ber"
 # define ERROR_EXIST_MSG "given file doesn't exist"
