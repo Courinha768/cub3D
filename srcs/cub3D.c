@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:14:35 by aappleto          #+#    #+#             */
-/*   Updated: 2023/08/31 15:53:08 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/08/31 17:45:37 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ void	cub3d(t_map_info map_info)
 	data.scene.img = mlx_new_image(data.mlx.ptr, SCREENW, SCREENH);
 	data.scene.addr = mlx_get_data_addr(data.scene.img, &data.scene.bits,
 			&data.scene.line, &data.scene.endian);
-	load_textures(&data, &data.wall1, "./textures/color1_1.xpm");
-	load_textures(&data, &data.wall2, "./textures/color2_1.xpm");
-	load_textures(&data, &data.wall3, "./textures/color3_1.xpm");
-	load_textures(&data, &data.wall4, "./textures/color4_1.xpm");
+	load_textures(&data, &data.wall1, data.map.EA_texture_path);
+	load_textures(&data, &data.wall2, data.map.WE_texture_path);
+	load_textures(&data, &data.wall3, data.map.SO_texture_path);
+	load_textures(&data, &data.wall4, data.map.NO_texture_path);
 	set_mlx_hooks(&data);
 	mlx_loop(data.mlx.ptr);
 	close_game(&data);
@@ -84,7 +84,7 @@ int	main(int ac, char **av)
 	if (av[1][fp_len - 4] != '.' || av[1][fp_len - 3] != 'c'
 		|| av[1][fp_len - 2] != 'u' || av[1][fp_len - 1] != 'b')
 		c3d_error(INVALID_FILE_EXTENSION, 0, NULL, &map_info);
-	map_info = parsing(av[1]);
+	map_info = parsing(av[1]);	
 	if (check_map_construction1(map_info)
 		|| check_map_construction2(map_info)
 		|| check_map_construction3(map_info)
@@ -93,10 +93,11 @@ int	main(int ac, char **av)
 	cub3d(map_info);
 }
 
-	// printf("NO: %s\n", map_info.NO_texture_path);
-	// printf("SO: %s\n", map_info.SO_texture_path);
-	// printf("WE: %s\n", map_info.WE_texture_path);
-	// printf("EA: %s\n\n", map_info.EA_texture_path);
+	// printf("NO: [%s]\n", map_info.NO_texture_path);
+	// printf("SO: [%s]\n", map_info.SO_texture_path);
+	// printf("WE: [%s]\n", map_info.WE_texture_path);
+	// printf("EA: [%s]\n\n", map_info.EA_texture_path);
 	// int	i = -1;
-	// while (map_info.map[++i]) 
+	// while (map_info.map[++i])
 	// 	printf("%s", map_info.map[i]);
+	// printf("\n");

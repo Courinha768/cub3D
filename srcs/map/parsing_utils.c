@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:13:05 by aappleto          #+#    #+#             */
-/*   Updated: 2023/08/31 15:17:48 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/08/31 16:46:10 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,33 @@ void	parse_vars(char *line, char **texture_path, bool *bool_var)
 
 void	set_map_size(t_map_info *map_info)
 {
+	int				i;
+	unsigned int	biggest_map_width;
+
 	map_info->height = 0;
 	map_info->width = 0;
 	while (map_info->map[map_info->height])
 		map_info->height++;
-	while (map_info->map[0][map_info->width])
-		map_info->width++;
+	i = -1;
+	biggest_map_width = 0;
+	while (++i < (int)map_info->height)
+	{
+		while (map_info->map[0][map_info->width])
+			map_info->width++;
+		if (map_info->width > biggest_map_width)
+			biggest_map_width = map_info->width;
+	}
+	map_info->width = biggest_map_width;
+}
+
+void	texture_files_exist(t_map_info *map_info)
+{
+	if (!verify_file_existance(map_info->NO_texture_path))
+		c3d_error(MAP_NOT_CONSTRUCTED_CORRECTLY, 3, NULL, map_info);
+	if (!verify_file_existance(map_info->SO_texture_path))
+		c3d_error(MAP_NOT_CONSTRUCTED_CORRECTLY, 3, NULL, map_info);
+	if (!verify_file_existance(map_info->WE_texture_path))
+		c3d_error(MAP_NOT_CONSTRUCTED_CORRECTLY, 3, NULL, map_info);
+	if (!verify_file_existance(map_info->EA_texture_path))
+		c3d_error(MAP_NOT_CONSTRUCTED_CORRECTLY, 3, NULL, map_info);
 }

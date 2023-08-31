@@ -6,13 +6,13 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:05:37 by aappleto          #+#    #+#             */
-/*   Updated: 2023/08/31 15:17:16 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/08/31 17:32:05 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3D.h"
 
-static bool	verify_file_existance(char *file_path)
+bool	verify_file_existance(char *file_path)
 {
 	int	fd;
 
@@ -104,11 +104,15 @@ t_map_info	parsing(char *file_path)
 		free(line);
 		line = get_next_valid_line(fd);
 	}
-	if (line)
+	while (line)
+	{
 		free(line);
+		line = get_next_valid_line(fd);
+	}
 	close(fd);
 	map_info.map = define_map(file_path);
 	map_info.exist.map = true;
 	set_map_size(&map_info);
+	texture_files_exist(&map_info);
 	return (map_info);
 }

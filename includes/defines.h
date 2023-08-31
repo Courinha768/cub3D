@@ -21,13 +21,6 @@
 
 # define MINIMAP_SCALE 16
 
-# define RGB_LIGHT_GREY create_trgb(0, 100, 100, 100)
-# define RGB_BLACK create_trgb(0, 0, 0, 0)
-# define RGB_WHITE create_trgb(0, 255, 255, 255)
-# define RGB_RED create_trgb(0, 255, 0, 0)
-# define RGB_GREEN create_trgb(0, 0, 255, 0)
-# define RGB_BLUE create_trgb(0, 0, 0, 255)
-
 //If u need to change the players speed, change SPEED and not the PLAYER_SPEED
 # define PLAYER_SPEED (SPEED * 60 / REFRESH_RATE)
 

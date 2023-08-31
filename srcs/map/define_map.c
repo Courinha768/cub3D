@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:11:15 by aappleto          #+#    #+#             */
-/*   Updated: 2023/08/31 15:11:19 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/08/31 17:46:06 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ char	**define_map(char *file_path)
 	int		fd;
 
 	fd = open(file_path, O_RDONLY);
-	free(get_next_line(fd));
 	map = get_map(fd, 0, NULL);
 	close(fd);
 	return (map);

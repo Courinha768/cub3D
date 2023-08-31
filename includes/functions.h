@@ -69,9 +69,11 @@ void	load_textures(t_data *data, t_img *wall, char *path);
 t_map_info	parsing(char *file_path);
 t_map_info_bool	init_info_bool(void);
 bool	is_complete(t_map_info_bool info);
+bool	verify_file_existance(char *file_path);
 void	set_map_size(t_map_info *map_info);
 void	parse_vars(char *line, char **texture_path, bool *bool_var);
 void	c3d_error(char *error, int fd, char *line, t_map_info *map_info);
+void	texture_files_exist(t_map_info *map_info);
 t_map_info_bool	init_info_bool(void);
 
 int	check_map_construction1(t_map_info map_info);
