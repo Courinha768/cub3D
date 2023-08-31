@@ -40,16 +40,28 @@ void			move_left(t_data *data);
 void			look_right(t_data *data);
 void			look_left(t_data *data);
 
+// minimap
+
+void    render_minimap(t_data *data);
+void    draw_square(t_data *data, int x, int y, int color);
+void    draw_player(t_data *data, float x, float y, int color);
+void	draw_line(t_data *data, t_position starting_position, t_position end_position, int color);
+
 //3D functions
 
+void	draw_wall(t_data *data, int pixel_w, int pixel_h);
 void    draw_scene(t_data *data, int pixel_w);
+void	get_tex_data(t_data *data);
 void    calc_wall_height(t_data *data);
 void    find_wall(t_data *data);
 void    calc_step_and_side(t_data *data);
 void	render_3d_scene(t_data *data);
 void    create_3dwin(t_data *data);
 
-void	my_pixel_put(t_data *data, int x, int y, int color);
+void	my_pixel_put(t_img *img, int x, int y, int color);
+unsigned int	get_color(t_img *img, int x, int y);
+
+void	load_textures(t_data *data, t_img *wall, char *path);
 
 
 

@@ -23,6 +23,8 @@ int	loop_hook(t_data *data)
 		if (data->keys_pressed.general)
 		{
 			render_3d_scene(data);
+			render_minimap(data);
+			mlx_put_image_to_window(data->mlx.ptr, data->mlx.win, data->scene.img, 0, 0);
 			old_position = data->player.position;
 			update_position(data);
 			if (check_colision(data->player.hitbox, data->map))

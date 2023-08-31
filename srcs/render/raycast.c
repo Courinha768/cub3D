@@ -66,22 +66,18 @@ void	find_wall(t_data *data)
 
 void	calc_wall_height(t_data *data)
 {
-	int		line_h;
-	float	prep_wall_dist;
-
-	line_h = 0;
-	prep_wall_dist = 0;
+	data->tex.wall_line_h = 0;
 	if (data->ray.wall_side == 0)
-		prep_wall_dist = fabs((data->player.map_posX - data->player.position.x
+		data->ray.prep_wall_dist = fabs((data->player.map_posX - data->player.position.x
 					+ (1 - data->ray.step.x) / 2) / data->ray.ray_dir.x);
 	else
-		prep_wall_dist = fabs((data->player.map_posY - data->player.position.y
+		data->ray.prep_wall_dist = fabs((data->player.map_posY - data->player.position.y
 					+ (1 - data->ray.step.y) / 2) / data->ray.ray_dir.y);
-	line_h = (int)(SCREENH / prep_wall_dist);
-	data->draw.start = -line_h / 2 + SCREENH / 2;
+	data->tex.wall_line_h  = (int)(SCREENH / data->ray.prep_wall_dist);
+	data->draw.start = -data->tex.wall_line_h  / 2 + SCREENH / 2;
 	if (data->draw.start < 0)
 		data->draw.start = 0;
-	data->draw.end = line_h / 2 + SCREENH / 2;
+	data->draw.end = data->tex.wall_line_h  / 2 + SCREENH / 2;
 	if (data->draw.end >= SCREENH)
 		data->draw.end = SCREENH - 1;
 }
