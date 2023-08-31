@@ -65,5 +65,6 @@ t_map_info_bool	init_info_bool(void);
 int	check_map_construction1(t_map_info map_info);
 int	check_map_construction2(t_map_info map_info);
 int	check_map_construction3(t_map_info map_info);
+int	check_map_construction4(t_map_info map_info);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:14:35 by aappleto          #+#    #+#             */
-/*   Updated: 2023/08/31 15:06:17 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/08/31 15:28:11 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ int	main(int ac, char **av)
 	map_info = parsing(av[1]);
 	if (check_map_construction1(map_info)
 		|| check_map_construction2(map_info)
-		|| check_map_construction3(map_info))
+		|| check_map_construction3(map_info)
+		|| check_map_construction4(map_info))
 		c3d_error(MAP_NOT_CONSTRUCTED_CORRECTLY, 0, NULL, &map_info);
 	cub3d(map_info);
 }
