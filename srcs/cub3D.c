@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:14:35 by aappleto          #+#    #+#             */
-/*   Updated: 2023/08/31 15:28:11 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/08/31 15:39:03 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,15 @@ void	cub3d(t_map_info map_info)
 int	main(int ac, char **av)
 {
 	t_map_info	map_info;
+	int			fp_len;
 
 	map_info.exist = init_info_bool();
+	fp_len = ft_strlen(av[1]);
 	if (ac != 2)
 		c3d_error(NBR_ARGS, 0, NULL, &map_info);
+	if (av[1][fp_len - 4] != '.' || av[1][fp_len - 3] != 'c'
+		|| av[1][fp_len - 2] != 'u' || av[1][fp_len - 1] != 'b')
+		c3d_error(INVALID_FILE_EXTENSION, 0, NULL, &map_info);
 	map_info = parsing(av[1]);
 	if (check_map_construction1(map_info)
 		|| check_map_construction2(map_info)
