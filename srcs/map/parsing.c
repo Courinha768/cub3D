@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:05:37 by aappleto          #+#    #+#             */
-/*   Updated: 2023/08/31 17:32:05 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/08/31 18:25:48 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,20 +65,20 @@ static int	find_color(char *line, t_map_info *map_info)
 
 static void	parse_line(char *line, t_map_info *map_info, t_map_info_bool *info)
 {
-	if (!ft_strncmp(line, "NO ", 3))
+	if (!ft_strncmp(line, "NO ", 3) && !info->NO_texture_path)
 		parse_vars(line, &map_info->NO_texture_path, &info->NO_texture_path);
-	else if (!ft_strncmp(line, "SO ", 3))
+	else if (!ft_strncmp(line, "SO ", 3) && !info->SO_texture_path)
 		parse_vars(line, &map_info->SO_texture_path, &info->SO_texture_path);
-	else if (!ft_strncmp(line, "WE ", 3))
+	else if (!ft_strncmp(line, "WE ", 3) && !info->WE_texture_path)
 		parse_vars(line, &map_info->WE_texture_path, &info->WE_texture_path);
-	else if (!ft_strncmp(line, "EA ", 3))
+	else if (!ft_strncmp(line, "EA ", 3) && !info->EA_texture_path)
 		parse_vars(line, &map_info->EA_texture_path, &info->EA_texture_path);
-	else if (!ft_strncmp(line, "F ", 2))
+	else if (!ft_strncmp(line, "F ", 2) && !info->floor_color)
 	{
 		map_info->floor_color = find_color(line, map_info);
 		map_info->exist.floor_color = true;
 	}
-	else if (!ft_strncmp(line, "C ", 2))
+	else if (!ft_strncmp(line, "C ", 2) && !info->ceiling_color)
 	{
 		map_info->ceiling_color = find_color(line, map_info);
 		map_info->exist.ceiling_color = true;

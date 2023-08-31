@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:24:07 by aappleto          #+#    #+#             */
-/*   Updated: 2023/08/24 17:26:54 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/08/31 18:07:33 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ void	draw_scene(t_data *data, int pixel_w)
 	while (++pixel_h < SCREENH)
 	{
 		if (pixel_h < data->draw.start)
-			my_pixel_put(&data->scene, pixel_w, pixel_h, create_trgb(0, 0, 255, 255));
+			my_pixel_put(&data->scene, pixel_w, pixel_h, data->map.ceiling_color);
 		else if (pixel_h > data->draw.end)
-			my_pixel_put(&data->scene, pixel_w, pixel_h, create_trgb(0, 180, 180, 180));
+			my_pixel_put(&data->scene, pixel_w, pixel_h, data->map.floor_color);
 		else
 			draw_wall(data, pixel_w, pixel_h);
 	}

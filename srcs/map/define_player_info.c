@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:19:55 by aappleto          #+#    #+#             */
-/*   Updated: 2023/08/24 17:20:24 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/08/31 18:26:24 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ static float	find_player_direction(t_map_info map,
 {
 	if (map.map[(int)player_position.y][(int)player_position.x] == 'W')
 		return (M_PI);
-	else if (map.map[(int)player_position.y][(int)player_position.x] == 'S')
+	else if (map.map[(int)player_position.y][(int)player_position.x] == 'N')
 		return (3 * M_PI_2);
 	else if (map.map[(int)player_position.y][(int)player_position.x] == 'E')
 		return (0);
-	else if (map.map[(int)player_position.y][(int)player_position.x] == 'N')
+	else if (map.map[(int)player_position.y][(int)player_position.x] == 'S')
 		return (M_PI_2);
 	else
 		return (0);

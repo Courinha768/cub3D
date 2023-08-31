@@ -12,11 +12,11 @@ void    render_minimap(t_data *data)
         while (data->map.map[i][++j])
         {
             if (data->map.map[i][j] == '0')
-                draw_square(data, (j + 1) * MINIMAP_SCALE, (i + 1) * MINIMAP_SCALE, create_trgb(0, 211, 211, 211));
+                draw_square(data, (j + 1) * MINIMAP_SCALE, (i + 1) * MINIMAP_SCALE, create_trgb(0, 228, 227, 225));
             else if (data->map.map[i][j] == '1')
-                draw_square(data, (j + 1) * MINIMAP_SCALE, (i + 1) * MINIMAP_SCALE, create_trgb(0, 0, 0, 0));
+                draw_square(data, (j + 1) * MINIMAP_SCALE, (i + 1) * MINIMAP_SCALE, create_trgb(0, 27, 28, 30));
             else if (data->map.map[i][j] != '\n')
-                draw_square(data, (j + 1) * MINIMAP_SCALE, (i + 1) * MINIMAP_SCALE, create_trgb(0, 211, 211, 211));
+                draw_square(data, (j + 1) * MINIMAP_SCALE, (i + 1) * MINIMAP_SCALE, create_trgb(0, 228, 227, 225));
         }
     }
     draw_player(data, (data->player.position.x) * MINIMAP_SCALE, (data->player.position.y) * MINIMAP_SCALE, create_trgb(0, 255, 0, 0));
