@@ -1,0 +1,46 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   define_map.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/31 15:11:15 by aappleto          #+#    #+#             */
+/*   Updated: 2023/08/31 15:11:19 by aappleto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../../includes/cub3D.h"
+
+static char	**get_map(int fd, int lc, char **map)
+{
+	char	*line;
+
+	line = get_next_line(fd);
+	while (line && line[0] != ' ' && line[0] != 49)
+	{
+		free(line);
+		line = get_next_line(fd);
+	}
+	if (line)
+		map = get_map(fd, (lc + 1), map);
+	else if (!map)
+		map = malloc(sizeof(char *) * (lc + 1));
+	if (!map)
+		return (NULL);
+	map[lc] = line;
+	return (map);
+}
+
+/*	Returns the map present in the file with the path file_path	*/
+char	**define_map(char *file_path)
+{
+	char	**map;
+	int		fd;
+
+	fd = open(file_path, O_RDONLY);
+	free(get_next_line(fd));
+	map = get_map(fd, 0, NULL);
+	close(fd);
+	return (map);
+}
