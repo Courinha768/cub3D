@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:19:55 by aappleto          #+#    #+#             */
-/*   Updated: 2023/08/31 18:26:24 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/01 16:40:02 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,16 @@ static t_position	find_player_position(t_map_info map)
 	temp_player_position.x = -1;
 	temp_player_position.y = -1;
 	i = -1;
-	while (++i < map.width)
+	while (++i < map.height && map.map[i])
 	{
 		j = -1;
-		while (++j < map.height)
+		while (++j < map.width && map.map[i][j])
 		{
-			if (map.map[j][i] == 'N' || map.map[j][i] == 'S'
-				|| map.map[j][i] == 'E' || map.map[j][i] == 'W')
+			if (map.map[i][j] == 'N' || map.map[i][j] == 'S'
+				|| map.map[i][j] == 'E' || map.map[i][j] == 'W')
 			{
-				temp_player_position.x = (float)i + 0.46875;
-				temp_player_position.y = (float)j + 0.46875;
+				temp_player_position.x = (float)j + 0.46875;
+				temp_player_position.y = (float)i + 0.46875;
 				return (temp_player_position);
 			}
 		}
