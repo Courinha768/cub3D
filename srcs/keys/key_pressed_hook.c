@@ -28,6 +28,10 @@ int	key_pressed_hook(int keycode, t_data *data)
 		data->keys_pressed.left = true;
 	else if (keycode == RIGHT)
 		data->keys_pressed.right = true;
+	else if (keycode == M && data->minimap == false)
+		data->minimap = true;
+	else if (keycode == M && data->minimap == true)
+		data->minimap = false;
 	data->keys_pressed.general += 1;
 	return (1);
 }

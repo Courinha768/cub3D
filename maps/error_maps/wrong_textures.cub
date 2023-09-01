@@ -1,7 +1,7 @@
-NO ./textures/color1_1.xpm
-SO ./textures/color2_1.xpm
-WE ./textures/color3_1.xpm
-EA ./textures/color4_1.xpm
+NO ./no_texture
+SO ./no_texture
+WE ./no_texture
+EA ./no_texture
 
 F 220,100,0
 C 255,255,234

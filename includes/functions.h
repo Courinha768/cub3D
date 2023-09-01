@@ -63,7 +63,7 @@ unsigned int	get_color(t_img *img, int x, int y);
 
 void	load_textures(t_data *data, t_img *wall, char *path);
 
-
+int	charnbr(char *line, char c);
 
 
 t_map_info	parsing(char *file_path);

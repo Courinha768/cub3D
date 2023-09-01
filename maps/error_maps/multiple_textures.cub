@@ -1,5 +1,8 @@
 NO ./textures/color1_1.xpm
+
 SO ./textures/color2_1.xpm
+SO ./textures/color2_1.xpm
+
 WE ./textures/color3_1.xpm
 EA ./textures/color4_1.xpm
 

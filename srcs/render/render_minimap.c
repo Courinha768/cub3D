@@ -15,7 +15,7 @@ void    render_minimap(t_data *data)
                 draw_square(data, (j + 1) * MINIMAP_SCALE, (i + 1) * MINIMAP_SCALE, create_trgb(0, 228, 227, 225));
             else if (data->map.map[i][j] == '1')
                 draw_square(data, (j + 1) * MINIMAP_SCALE, (i + 1) * MINIMAP_SCALE, create_trgb(0, 27, 28, 30));
-            else if (data->map.map[i][j] != '\n')
+            else if (data->map.map[i][j] != '\n' && data->map.map[i][j] != ' ')
                 draw_square(data, (j + 1) * MINIMAP_SCALE, (i + 1) * MINIMAP_SCALE, create_trgb(0, 228, 227, 225));
         }
     }

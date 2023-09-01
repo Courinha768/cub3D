@@ -110,6 +110,7 @@ typedef struct	s_data {
 	t_img			wall4;
 	t_draw			draw;
 	t_tex			tex;
+	bool			minimap;
 } t_data;
 
 #endif

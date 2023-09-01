@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:14:35 by aappleto          #+#    #+#             */
-/*   Updated: 2023/08/31 17:45:37 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/01 16:16:26 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	cub3d(t_map_info map_info)
 	load_textures(&data, &data.wall2, data.map.WE_texture_path);
 	load_textures(&data, &data.wall3, data.map.SO_texture_path);
 	load_textures(&data, &data.wall4, data.map.NO_texture_path);
+	data.minimap = true;
 	set_mlx_hooks(&data);
 	mlx_loop(data.mlx.ptr);
 	close_game(&data);
@@ -84,7 +85,7 @@ int	main(int ac, char **av)
 	if (av[1][fp_len - 4] != '.' || av[1][fp_len - 3] != 'c'
 		|| av[1][fp_len - 2] != 'u' || av[1][fp_len - 1] != 'b')
 		c3d_error(INVALID_FILE_EXTENSION, 0, NULL, &map_info);
-	map_info = parsing(av[1]);	
+	map_info = parsing(av[1]);
 	if (check_map_construction1(map_info)
 		|| check_map_construction2(map_info)
 		|| check_map_construction3(map_info)
