@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "../libft/libft.h"
 
 size_t	ft_strlcpy_gnl(char *dst, char *src, size_t size)
 {
@@ -51,17 +52,17 @@ char	*ft_exstrchr(char *s)
 	return (tmp);
 }
 
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
+// size_t	ft_strlen(const char *str)
+// {
+// 	size_t	i;
 
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+// 	i = 0;
+// 	if (!str)
+// 		return (0);
+// 	while (str[i] != '\0')
+// 		i++;
+// 	return (i);
+// }
 
 char	*ft_strnldup(char *s1)
 {

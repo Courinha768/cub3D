@@ -41,22 +41,22 @@ void	parse_vars(char *line, char **texture_path, bool *bool_var)
 void	set_map_size(t_map_info *map_info)
 {
 	int				i;
-	unsigned int	biggest_map_width;
+	unsigned int	j;
 
 	map_info->height = 0;
 	map_info->width = 0;
 	while (map_info->map[map_info->height])
 		map_info->height++;
 	i = -1;
-	biggest_map_width = 0;
 	while (++i < (int)map_info->height)
 	{
-		while (map_info->map[0][map_info->width])
-			map_info->width++;
-		if (map_info->width > biggest_map_width)
-			biggest_map_width = map_info->width;
+		j = 0;
+		while (map_info->map[i][j])
+			j++;
+		if (j > map_info->width)
+			map_info->width = j;
 	}
-	map_info->width = biggest_map_width;
+	map_info->width = j;
 }
 
 void	texture_files_exist(t_map_info *map_info)

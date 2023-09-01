@@ -115,11 +115,15 @@ int	check_map_construction4(t_map_info map_info)
 	int		i;
 
 	i = -1;
-	while (++i < (int)map_info.width)
+	while (++i < (int)map_info.width && map_info.map[0][i])
 	{
 		if (map_info.map[0][i]
 			&& map_info.map[0][i] != 49 && map_info.map[0][i] != 10)
 			return (true);
+	}
+	i = -1;
+	while (++i < (int)map_info.width && map_info.map[map_info.height - 1][i])
+	{
 		if (map_info.map[map_info.height - 1][i]
 			&& map_info.map[map_info.height - 1][i] != 49
 			&& map_info.map[map_info.height - 1][i] != 10)
@@ -131,9 +135,9 @@ int	check_map_construction4(t_map_info map_info)
 		if (map_info.map[i][0]
 			&& map_info.map[i][0] != 49 && map_info.map[i][0] != 10)
 			return (true);
-		if (map_info.map[i][map_info.width - 1]
-			&& map_info.map[i][map_info.width - 1] != 49
-			&& map_info.map[i][map_info.width - 1] != 10)
+		if (map_info.map[i][ft_strlen(map_info.map[i] - 1)]
+			&& map_info.map[i][ft_strlen(map_info.map[i] - 1)] != 49
+			&& map_info.map[i][ft_strlen(map_info.map[i] - 1)] != 10)
 			return (true);
 	}
 	return (false);
