@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:05:37 by aappleto          #+#    #+#             */
-/*   Updated: 2023/09/01 15:42:33 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/01 16:06:42 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ t_map_info	parsing(char *file_path)
 	close(fd);
 	map_info.map = define_map(file_path);
 	if (!map_info.map)
-		c3d_error(MAP_NOT_CONSTRUCTED_CORRECTLY, fd, line, &map_info);
+		c3d_error(MAP_NOT_CONSTRUCTED_CORRECTLY, fd, line, &map_info);	
 	map_info.exist.map = true;
 	set_map_size(&map_info);
 	texture_files_exist(&map_info);

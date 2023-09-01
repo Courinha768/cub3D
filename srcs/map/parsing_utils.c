@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:13:05 by aappleto          #+#    #+#             */
-/*   Updated: 2023/08/31 16:46:10 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/01 16:16:22 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	set_map_size(t_map_info *map_info)
 		if (j > map_info->width)
 			map_info->width = j;
 	}
-	map_info->width = j;
 }
 
 void	texture_files_exist(t_map_info *map_info)
