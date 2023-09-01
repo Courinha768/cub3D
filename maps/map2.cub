@@ -1,7 +1,6 @@
-NO ./textures/color1_1.xpm
+NO ./textures/color2_1.xpm
 SO ./textures/color2_1.xpm
 WE ./textures/color3_1.xpm
-EA ./textures/color4_1.xpm
 
 F 220,100,0
 C 255,255,234
@@ -13,8 +12,7 @@ C 255,255,234
 10111100111001
 100001001 1001
 1000010011100111
-111111111111111
-111
-111
-11
+101111111111111
+101
+101
 111

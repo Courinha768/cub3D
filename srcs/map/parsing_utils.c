@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:13:05 by aappleto          #+#    #+#             */
-/*   Updated: 2023/09/01 16:16:22 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/01 16:57:40 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,18 @@ bool	is_complete(t_map_info_bool info)
 		&& info.EA_texture_path && info.floor_color && info.ceiling_color);
 }
 
-void	parse_vars(char *line, char **texture_path, bool *bool_var)
+void	parse_vars(char *line, char **texture_path, bool *bool_var
+		, bool *not_xpm)
 {
+	size_t	line_size;
+
 	*texture_path = ft_substr(line, 3, ft_strlen(line) - 4);
+	line_size = ft_strlen(*texture_path);
+	if (*texture_path[line_size] < 4 || *texture_path[line_size - 1] != 'm'
+		|| *texture_path[line_size - 2] != 'p'
+		|| *texture_path[line_size - 3] != 'x'
+		|| *texture_path[line_size - 4] != '.')
+		not_xpm = true;
 	*bool_var = true;
 }
 

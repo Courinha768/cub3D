@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:05:37 by aappleto          #+#    #+#             */
-/*   Updated: 2023/09/01 16:23:26 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/01 16:58:57 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,14 +67,17 @@ static int	find_color(char *line, t_map_info *map_info)
 
 static void	parse_line(char *line, t_map_info *map_info, t_map_info_bool *info)
 {
+	bool	not_xpm;
+
+	not_xpm = false;
 	if (!ft_strncmp(line, "NO ", 3) && !info->NO_texture_path)
-		parse_vars(line, &map_info->NO_texture_path, &info->NO_texture_path);
+		parse_vars(line, &map_info->NO_texture_path, &info->NO_texture_path, &not_xpm);
 	else if (!ft_strncmp(line, "SO ", 3) && !info->SO_texture_path)
-		parse_vars(line, &map_info->SO_texture_path, &info->SO_texture_path);
+		parse_vars(line, &map_info->SO_texture_path, &info->SO_texture_path, &not_xpm);
 	else if (!ft_strncmp(line, "WE ", 3) && !info->WE_texture_path)
-		parse_vars(line, &map_info->WE_texture_path, &info->WE_texture_path);
+		parse_vars(line, &map_info->WE_texture_path, &info->WE_texture_path, &not_xpm);
 	else if (!ft_strncmp(line, "EA ", 3) && !info->EA_texture_path)
-		parse_vars(line, &map_info->EA_texture_path, &info->EA_texture_path);
+		parse_vars(line, &map_info->EA_texture_path, &info->EA_texture_path, &not_xpm);
 	else if (!ft_strncmp(line, "F ", 2) && !info->floor_color)
 	{
 		map_info->floor_color = find_color(line, map_info);
@@ -86,6 +89,8 @@ static void	parse_line(char *line, t_map_info *map_info, t_map_info_bool *info)
 		map_info->exist.ceiling_color = true;
 	}
 	else
+		c3d_error(MAP_NOT_CONSTRUCTED_CORRECTLY, 3, line, map_info);
+	if (not_xpm)
 		c3d_error(MAP_NOT_CONSTRUCTED_CORRECTLY, 3, line, map_info);
 }
 
