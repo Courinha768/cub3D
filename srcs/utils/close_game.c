@@ -16,6 +16,10 @@ int	close_game(t_data *data)
 {
 	free_map(data->map.map);
 	mlx_destroy_image(data->mlx.ptr, data->scene.img);
+	mlx_destroy_image(data->mlx.ptr, data->wall1.img);
+	mlx_destroy_image(data->mlx.ptr, data->wall2.img);
+	mlx_destroy_image(data->mlx.ptr, data->wall3.img);
+	mlx_destroy_image(data->mlx.ptr, data->wall4.img);
 	mlx_destroy_window(data->mlx.ptr, data->mlx.win);
 	mlx_destroy_display(data->mlx.ptr);
 	free(data->mlx.ptr);
