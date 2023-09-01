@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:05:37 by aappleto          #+#    #+#             */
-/*   Updated: 2023/09/01 16:06:42 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/01 16:23:26 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ static int	find_color(char *line, t_map_info *map_info)
 	char	**rgb_code_char;
 	int		rgb_code[3];
 
+	if (charnbr(line, ',') != 2)
+		c3d_error(INVALID_COLORS, 3, line, map_info);
 	new_line = ft_substr(line, 2, ft_strlen(line) - 3);
 	rgb_code_char = ft_split(new_line, ',');
 	rgb_code[0] = ft_atoi(rgb_code_char[0]);
