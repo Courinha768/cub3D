@@ -15,6 +15,8 @@
 
 # include "./structs.h"
 
+void			cub3d(t_map_info map_info);
+
 int				free_map(char **map);
 char			**define_map(char *file_path);
 
@@ -27,6 +29,10 @@ int				loop_hook(t_data *data);
 t_key_events	init_keys_pressed(void);
 int				key_pressed_hook(int keycode, t_data *data);
 int				key_release_hook(int keycode, t_data *data);
+
+bool			parse_line_util(char *line, t_map_info *map_info,
+					t_map_info_bool *info, bool *not_xpm);
+void			parsing_utils(char *file_path, t_map_info *map_info);
 
 // t_map_info		define_map_info(char **map);
 t_player_info	define_player_info(t_map_info map);

@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:18:16 by aappleto          #+#    #+#             */
-/*   Updated: 2023/08/24 17:19:05 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/02 17:51:23 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int	loop_hook(t_data *data)
 			render_3d_scene(data);
 			if (data->minimap)
 				render_minimap(data);
-			mlx_put_image_to_window(data->mlx.ptr, data->mlx.win, data->scene.img, 0, 0);
+			mlx_put_image_to_window(data->mlx.ptr, data->mlx.win,
+				data->scene.img, 0, 0);
 			old_position = data->player.position;
 			update_position(data);
 			if (check_colision(data->player.hitbox, data->map))

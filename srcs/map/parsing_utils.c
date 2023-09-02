@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:13:05 by aappleto          #+#    #+#             */
-/*   Updated: 2023/09/02 17:42:13 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/02 17:58:13 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ void	parse_vars(char *line, char **texture_path, bool *bool_var
 		|| (*texture_path)[line_size - 2] != 'p'
 		|| (*texture_path)[line_size - 3] != 'x'
 		|| (*texture_path)[line_size - 4] != '.')
-		{
-			*not_xpm = true;
-		}
+	{
+		*not_xpm = true;
+	}
 	*bool_var = true;
 }
 

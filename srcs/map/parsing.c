@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:05:37 by aappleto          #+#    #+#             */
-/*   Updated: 2023/09/02 17:42:13 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/02 18:08:32 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,8 @@ static void	parse_line(char *line, t_map_info *map_info, t_map_info_bool *info)
 	bool	not_xpm;
 
 	not_xpm = false;
-	if (!ft_strncmp(line, "NO ", 3) && !info->no_texture_path)
-		parse_vars(line, &map_info->no_texture_path, &info->no_texture_path, &not_xpm);
-	else if (!ft_strncmp(line, "SO ", 3) && !info->so_texture_path)
-		parse_vars(line, &map_info->so_texture_path, &info->so_texture_path, &not_xpm);
-	else if (!ft_strncmp(line, "WE ", 3) && !info->we_texture_path)
-		parse_vars(line, &map_info->we_texture_path, &info->we_texture_path, &not_xpm);
-	else if (!ft_strncmp(line, "EA ", 3) && !info->ea_texture_path)
-		parse_vars(line, &map_info->ea_texture_path, &info->ea_texture_path, &not_xpm);
+	if (parse_line_util(line, map_info, info, &not_xpm))
+		(void)line;
 	else if (!ft_strncmp(line, "F ", 2) && !info->floor_color)
 	{
 		map_info->floor_color = find_color(line, map_info);
@@ -117,11 +111,6 @@ t_map_info	parsing(char *file_path)
 		line = get_next_valid_line(fd);
 	}
 	close(fd);
-	map_info.map = define_map(file_path);
-	if (!map_info.map)
-		c3d_error(MAP_NOT_CONSTRUCTED_CORRECTLY, fd, line, &map_info);	
-	map_info.exist.map = true;
-	set_map_size(&map_info);
-	texture_files_exist(&map_info);
+	parsing_utils(file_path, &map_info);
 	return (map_info);
 }
