@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:05:37 by aappleto          #+#    #+#             */
-/*   Updated: 2023/09/02 18:08:32 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/02 19:03:02 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static void	parse_line(char *line, t_map_info *map_info, t_map_info_bool *info)
 
 	not_xpm = false;
 	if (parse_line_util(line, map_info, info, &not_xpm))
-		(void)line;
+		(void)not_xpm;
 	else if (!ft_strncmp(line, "F ", 2) && !info->floor_color)
 	{
 		map_info->floor_color = find_color(line, map_info);

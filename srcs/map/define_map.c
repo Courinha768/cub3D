@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:11:15 by aappleto          #+#    #+#             */
-/*   Updated: 2023/09/01 15:46:53 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/02 18:18:11 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ char	**define_map(char *file_path)
 	map = get_map(fd, 0, NULL, &correct);
 	close(fd);
 	if (!correct)
+	{
+		free_map(map);
 		return (NULL);
+	}
 	return (map);
 }
