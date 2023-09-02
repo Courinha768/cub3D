@@ -93,4 +93,6 @@ int				check_map_construction2(t_map_info map_info);
 int				check_map_construction3(t_map_info map_info);
 int				check_map_construction4(t_map_info map_info);
 
+char			*get_next_valid_line(int fd);
+
 #endif

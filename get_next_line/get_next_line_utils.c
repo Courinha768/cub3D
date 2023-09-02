@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 22:26:50 by aappleto          #+#    #+#             */
-/*   Updated: 2023/09/02 17:49:04 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/02 19:46:19 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ char	*ft_exstrchr(char *s)
 		return (NULL);
 	ft_strlcpy_gnl(tmp, s + i + 1, ft_strlen(s) - i + 1);
 	free(s);
+	s = NULL;
 	return (tmp);
 }
 

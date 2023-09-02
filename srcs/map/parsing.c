@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:05:37 by aappleto          #+#    #+#             */
-/*   Updated: 2023/09/02 19:19:55 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/02 19:49:08 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ bool	verify_file_existance(char *file_path)
 	return (true);
 }
 
-static char	*get_next_valid_line(int fd)
+char	*get_next_valid_line(int fd)
 {
 	char	*line;
 

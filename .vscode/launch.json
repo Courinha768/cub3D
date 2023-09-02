@@ -6,7 +6,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "cub3D",
-            "args": ["maps/error_maps/wrong_textures.cub"],
+            "args": ["maps/error_maps/not_xpm.cub"],
             "stopAtEntry": false,
             "cwd": "/nfs/homes/aappleto/Documents/cub3D",
             "environment": [],
