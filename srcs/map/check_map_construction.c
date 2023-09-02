@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:05:31 by aappleto          #+#    #+#             */
-/*   Updated: 2023/09/01 16:52:36 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/02 17:34:50 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,10 +138,10 @@ int	check_map_construction4(t_map_info map_info)
 			&& map_info.map[i][0] != 49 && map_info.map[i][0] != 10
 			&& map_info.map[i][0] != 32)
 			return (true);
-		if (map_info.map[i][ft_strlen(map_info.map[i] - 1)]
-			&& map_info.map[i][ft_strlen(map_info.map[i] - 1)] != 49
-			&& map_info.map[i][ft_strlen(map_info.map[i] - 1)] != 10
-			&& map_info.map[i][ft_strlen(map_info.map[i] - 1)] != 32)
+		if (map_info.map[i][ft_strlen(map_info.map[i]) - 1]
+			&& map_info.map[i][ft_strlen(map_info.map[i]) - 1] != 49
+			&& map_info.map[i][ft_strlen(map_info.map[i]) - 1] != 10
+			&& map_info.map[i][ft_strlen(map_info.map[i]) - 1] != 32)
 			return (true);
 	}
 	return (false);

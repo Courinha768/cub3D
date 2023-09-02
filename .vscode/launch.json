@@ -8,7 +8,7 @@
             "program": "cub3D",
             "args": ["maps/basic_map.cub"],
             "stopAtEntry": false,
-            "cwd": "/home/courinha/cub3D",
+            "cwd": "/nfs/homes/aappleto/Documents/cub3D",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",

@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:13:05 by aappleto          #+#    #+#             */
-/*   Updated: 2023/09/01 16:57:40 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/02 17:33:37 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,13 @@ void	parse_vars(char *line, char **texture_path, bool *bool_var
 
 	*texture_path = ft_substr(line, 3, ft_strlen(line) - 4);
 	line_size = ft_strlen(*texture_path);
-	if (*texture_path[line_size] < 4 || *texture_path[line_size - 1] != 'm'
-		|| *texture_path[line_size - 2] != 'p'
-		|| *texture_path[line_size - 3] != 'x'
-		|| *texture_path[line_size - 4] != '.')
-		not_xpm = true;
+	if (line_size < 4 || (*texture_path)[line_size - 1] != 'm'
+		|| (*texture_path)[line_size - 2] != 'p'
+		|| (*texture_path)[line_size - 3] != 'x'
+		|| (*texture_path)[line_size - 4] != '.')
+		{
+			*not_xpm = true;
+		}
 	*bool_var = true;
 }
 
