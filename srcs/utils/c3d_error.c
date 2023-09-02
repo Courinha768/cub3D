@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:05:28 by aappleto          #+#    #+#             */
-/*   Updated: 2023/08/31 15:05:48 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/02 17:42:13 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ void	c3d_error(char *error, int fd, char *line, t_map_info *map_info)
 		close(fd);
 	if (line)
 		free(line);
-	if (map_info->exist.NO_texture_path)
-		free(map_info->NO_texture_path);
-	if (map_info->exist.SO_texture_path)
-		free(map_info->SO_texture_path);
-	if (map_info->exist.WE_texture_path)
-		free(map_info->WE_texture_path);
-	if (map_info->exist.EA_texture_path)
-		free(map_info->EA_texture_path);
+	if (map_info->exist.no_texture_path)
+		free(map_info->no_texture_path);
+	if (map_info->exist.so_texture_path)
+		free(map_info->so_texture_path);
+	if (map_info->exist.we_texture_path)
+		free(map_info->we_texture_path);
+	if (map_info->exist.ea_texture_path)
+		free(map_info->ea_texture_path);
 	if (map_info->exist.map)
 		free_map(map_info->map);
 	exit (0);

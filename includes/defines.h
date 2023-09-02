@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   defines.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/02 17:38:29 by aappleto          #+#    #+#             */
+/*   Updated: 2023/09/02 17:44:10 by aappleto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef DEFINES_H
 # define DEFINES_H
 
 # define GAME_NAME	"cub3D"
 
-# define SPEED 10
+# define PLAYER_SPEED 4
 # define CAMERA_SPEED 5
 # define REFRESH_RATE 120
 
@@ -13,16 +25,13 @@
 # define TEXW 64
 # define TEXH 64
 
-#define FILE_DOESNT_EXIST "Given file doesn't exist"
-#define MAP_NOT_CONSTRUCTED_CORRECTLY "Map not constructed correctly"
-#define NBR_ARGS "Incorrect number of arguments"
-#define INVALID_COLORS "Given color for floor/ceiling doesn't exist"
+# define FILE_DOESNT_EXIST "Given file doesn't exist"
+# define MAP_NOT_CONSTRUCTED_CORRECTLY "Map not constructed correctly"
+# define NBR_ARGS "Incorrect number of arguments"
+# define INVALID_COLORS "Given color for floor/ceiling doesn't exist"
 # define INVALID_FILE_EXTENSION "Invalid file extension"
 
 # define MINIMAP_SCALE 16
-
-//If u need to change the players speed, change SPEED and not the PLAYER_SPEED
-# define PLAYER_SPEED (SPEED * 60 / REFRESH_RATE)
 
 enum {
 	ERROR_ARGUMENTS = 1,

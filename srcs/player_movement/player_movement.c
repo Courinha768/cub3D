@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:21:03 by aappleto          #+#    #+#             */
-/*   Updated: 2023/08/24 17:21:05 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/02 17:40:34 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ Direction: FRONT
 */
 void	move_front(t_data *data)
 {
-	data->player.position.x += PLAYER_SPEED * 0.01 * cos(data->player.dirX);
-	data->player.position.y += PLAYER_SPEED * 0.01 * sin(data->player.dirX);
+	data->player.position.x += PLAYER_SPEED * 0.01 * cos(data->player.dirx);
+	data->player.position.y += PLAYER_SPEED * 0.01 * sin(data->player.dirx);
 }
 
 /*
@@ -30,8 +30,8 @@ Direction: BACK
 */
 void	move_back(t_data *data)
 {
-	data->player.position.x -= PLAYER_SPEED * 0.01 * cos(data->player.dirX);
-	data->player.position.y -= PLAYER_SPEED * 0.01 * sin(data->player.dirX);
+	data->player.position.x -= PLAYER_SPEED * 0.01 * cos(data->player.dirx);
+	data->player.position.y -= PLAYER_SPEED * 0.01 * sin(data->player.dirx);
 }
 
 /*
@@ -41,8 +41,8 @@ Direction: LEFT
 */
 void	move_left(t_data *data)
 {
-	data->player.position.x += PLAYER_SPEED * 0.01 * sin(data->player.dirX);
-	data->player.position.y -= PLAYER_SPEED * 0.01 * cos(data->player.dirX);
+	data->player.position.x += PLAYER_SPEED * 0.01 * sin(data->player.dirx);
+	data->player.position.y -= PLAYER_SPEED * 0.01 * cos(data->player.dirx);
 }
 
 /*
@@ -52,6 +52,6 @@ Direction: RIGHT
 */
 void	move_right(t_data *data)
 {
-	data->player.position.x -= PLAYER_SPEED * 0.01 * sin(data->player.dirX);
-	data->player.position.y += PLAYER_SPEED * 0.01 * cos(data->player.dirX);
+	data->player.position.x -= PLAYER_SPEED * 0.01 * sin(data->player.dirx);
+	data->player.position.y += PLAYER_SPEED * 0.01 * cos(data->player.dirx);
 }

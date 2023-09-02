@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:14:35 by aappleto          #+#    #+#             */
-/*   Updated: 2023/09/01 16:16:26 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/02 17:42:13 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ void	cub3d(t_map_info map_info)
 	data.scene.img = mlx_new_image(data.mlx.ptr, SCREENW, SCREENH);
 	data.scene.addr = mlx_get_data_addr(data.scene.img, &data.scene.bits,
 			&data.scene.line, &data.scene.endian);
-	load_textures(&data, &data.wall1, data.map.EA_texture_path);
-	load_textures(&data, &data.wall2, data.map.WE_texture_path);
-	load_textures(&data, &data.wall3, data.map.SO_texture_path);
-	load_textures(&data, &data.wall4, data.map.NO_texture_path);
+	load_textures(&data, &data.wall1, data.map.ea_texture_path);
+	load_textures(&data, &data.wall2, data.map.we_texture_path);
+	load_textures(&data, &data.wall3, data.map.so_texture_path);
+	load_textures(&data, &data.wall4, data.map.no_texture_path);
 	data.minimap = true;
 	set_mlx_hooks(&data);
 	mlx_loop(data.mlx.ptr);
@@ -94,10 +94,10 @@ int	main(int ac, char **av)
 	cub3d(map_info);
 }
 
-	// printf("NO: [%s]\n", map_info.NO_texture_path);
-	// printf("SO: [%s]\n", map_info.SO_texture_path);
-	// printf("WE: [%s]\n", map_info.WE_texture_path);
-	// printf("EA: [%s]\n\n", map_info.EA_texture_path);
+	// printf("NO: [%s]\n", map_info.no_texture_path);
+	// printf("SO: [%s]\n", map_info.so_texture_path);
+	// printf("WE: [%s]\n", map_info.we_texture_path);
+	// printf("EA: [%s]\n\n", map_info.ea_texture_path);
 	// int	i = -1;
 	// while (map_info.map[++i])
 	// 	printf("%s", map_info.map[i]);

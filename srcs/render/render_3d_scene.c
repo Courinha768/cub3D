@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:24:07 by aappleto          #+#    #+#             */
-/*   Updated: 2023/08/31 18:07:33 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/02 17:41:25 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	render_3d_scene(t_data *data)
 			* camerax;
 		data->ray.ray_dir.y = data->player.view_dir.y + data->player.plane.y
 			* camerax;
-		data->player.map_posX = (int)data->player.position.x;
-		data->player.map_posY = (int)data->player.position.y;
+		data->player.map_posx = (int)data->player.position.x;
+		data->player.map_posy = (int)data->player.position.y;
 		data->ray.delta.x = sqrt(1 + pow(data->ray.ray_dir.y, 2)
 				/ pow(data->ray.ray_dir.x, 2));
 		data->ray.delta.y = sqrt(1 + pow(data->ray.ray_dir.x, 2)

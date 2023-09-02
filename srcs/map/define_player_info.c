@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:19:55 by aappleto          #+#    #+#             */
-/*   Updated: 2023/09/01 16:40:02 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/02 17:41:25 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,13 @@ t_player_info	define_player_info(t_map_info map)
 	t_player_info	temp_player;
 
 	temp_player.position = find_player_position(map);
-	temp_player.dirX = find_player_direction(map, temp_player.position);
+	temp_player.dirx = find_player_direction(map, temp_player.position);
 	temp_player.hitbox = define_player_hitbox(temp_player.position);
-	temp_player.view_dir.x = cos(temp_player.dirX);
-	temp_player.view_dir.y = sin(temp_player.dirX);
-	temp_player.plane.x = -sin(temp_player.dirX);
-	temp_player.plane.y = cos(temp_player.dirX);
-	temp_player.map_posX = 0;
-	temp_player.map_posY = 0;
+	temp_player.view_dir.x = cos(temp_player.dirx);
+	temp_player.view_dir.y = sin(temp_player.dirx);
+	temp_player.plane.x = -sin(temp_player.dirx);
+	temp_player.plane.y = cos(temp_player.dirx);
+	temp_player.map_posx = 0;
+	temp_player.map_posy = 0;
 	return (temp_player);
 }

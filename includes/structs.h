@@ -1,63 +1,75 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   structs.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/02 17:38:34 by aappleto          #+#    #+#             */
+/*   Updated: 2023/09/02 17:42:13 by aappleto         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef STRUCTS_H
 # define STRUCTS_H
 
-typedef struct	s_mlx {
+typedef struct s_mlx {
 	void	*ptr;
 	void	*win;
 }	t_mlx;
 
-typedef struct	s_position {
+typedef struct s_position {
 	float	x;
 	float	y;
 }	t_position;
 
 typedef struct s_step {
-	int x;
+	int	x;
 	int	y;
 }	t_step;
 
-typedef struct	s_hitbox {
+typedef struct s_hitbox {
 	t_position	tl_corner;
 	t_position	tr_corner;
 	t_position	bl_corner;
 	t_position	br_corner;
 }	t_hitbox;
 
-typedef struct	s_player_info {
+typedef struct s_player_info {
 	t_position	position;
 	t_hitbox	hitbox;
 	void		*img;
-	float		dirX;
+	float		dirx;
 	t_position	view_dir;
 	t_position	plane;
-	int			map_posX;
-	int			map_posY;
+	int			map_posx;
+	int			map_posy;
 }	t_player_info;
 
-typedef struct	s_map_info_bool {
-	bool	NO_texture_path;
-	bool	SO_texture_path;
-	bool	WE_texture_path;
-	bool	EA_texture_path;
+typedef struct s_map_info_bool {
+	bool	no_texture_path;
+	bool	so_texture_path;
+	bool	we_texture_path;
+	bool	ea_texture_path;
 	bool	floor_color;
 	bool	ceiling_color;
 	bool	map;
 }	t_map_info_bool;
 
-typedef struct	s_map_info {
+typedef struct s_map_info {
 	char			**map;
 	unsigned int	height;
 	unsigned int	width;
-	char			*NO_texture_path;
-	char			*SO_texture_path;
-	char			*WE_texture_path;
-	char			*EA_texture_path;
+	char			*no_texture_path;
+	char			*so_texture_path;
+	char			*we_texture_path;
+	char			*ea_texture_path;
 	int				floor_color;
 	int				ceiling_color;
 	t_map_info_bool	exist;
 }	t_map_info;
 
-typedef struct	s_key_events {
+typedef struct s_key_events {
 	int		general;
 	bool	w;
 	bool	s;
@@ -97,7 +109,7 @@ typedef struct s_tex {
 	int		color;
 }	t_tex;
 
-typedef struct	s_data {
+typedef struct s_data {
 	t_map_info		map;
 	t_player_info	player;
 	t_mlx			mlx;
@@ -111,6 +123,6 @@ typedef struct	s_data {
 	t_draw			draw;
 	t_tex			tex;
 	bool			minimap;
-} t_data;
+}	t_data;
 
 #endif
