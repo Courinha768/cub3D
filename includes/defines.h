@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 17:38:29 by aappleto          #+#    #+#             */
-/*   Updated: 2023/09/02 17:44:10 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/02 19:19:49 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,13 @@
 # define TEXW 64
 # define TEXH 64
 
+# define XPM "Texture files should have the xpm extension"
+# define TOO_MUCH_INFO "There is too much or too little information on the file"
 # define FILE_DOESNT_EXIST "Given file doesn't exist"
-# define MAP_NOT_CONSTRUCTED_CORRECTLY "Map not constructed correctly"
-# define NBR_ARGS "Incorrect number of arguments"
 # define INVALID_COLORS "Given color for floor/ceiling doesn't exist"
+# define TEXTURE_FILE "Given texture file doesn't exist"
+# define NBR_ARGS "Incorrect number of arguments"
+# define MAP_NOT_CONSTRUCTED_CORRECTLY "Map not constructed correctly"
 # define INVALID_FILE_EXTENSION "Invalid file extension"
 
 # define MINIMAP_SCALE 16

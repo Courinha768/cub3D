@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 15:05:37 by aappleto          #+#    #+#             */
-/*   Updated: 2023/09/02 19:03:02 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/02 19:19:55 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,9 @@ static void	parse_line(char *line, t_map_info *map_info, t_map_info_bool *info)
 		map_info->exist.ceiling_color = true;
 	}
 	else
-		c3d_error(MAP_NOT_CONSTRUCTED_CORRECTLY, 3, line, map_info);
+		c3d_error(TOO_MUCH_INFO, 3, line, map_info);
 	if (not_xpm)
-		c3d_error(MAP_NOT_CONSTRUCTED_CORRECTLY, 3, line, map_info);
+		c3d_error(XPM, 3, line, map_info);
 }
 
 t_map_info	parsing(char *file_path)

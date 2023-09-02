@@ -1,7 +1,7 @@
-NO ./no_texture.xpm
-SO ./no_texture.xpm
-WE ./no_texture.xpm
-EA ./no_texture.xpm
+NO ./no_texture
+SO ./no_texture
+WE ./no_texture
+EA ./no_texture
 
 F 220,100,0
 C 255,255,234
