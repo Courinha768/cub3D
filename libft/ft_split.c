@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_ft_split.c                                     :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aappleto <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 18:44:54 by aappleto          #+#    #+#             */
-/*   Updated: 2021/10/25 18:44:56 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/02 17:49:38 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ int	sstrlen(char const *s, char c)
 	return (counter);
 }
 
-
 /*
  *Allocates (with malloc(3)) and returns an array
  *of strings obtained by splitting ’s’ using the
@@ -84,7 +83,7 @@ char	**ft_split(char const *s, char c)
 				split[split_index][split_index2++] = s[index++];
 			split[split_index++][split_index2] = 0;
 		}
-	}	
+	}
 	split[split_index] = NULL;
 	return (split);
 }
