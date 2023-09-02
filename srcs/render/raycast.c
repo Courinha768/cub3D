@@ -6,7 +6,7 @@
 /*   By: aappleto <aappleto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 17:24:05 by aappleto          #+#    #+#             */
-/*   Updated: 2023/09/02 17:41:25 by aappleto         ###   ########.fr       */
+/*   Updated: 2023/09/02 19:14:31 by aappleto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,16 +68,18 @@ void	calc_wall_height(t_data *data)
 {
 	data->tex.wall_line_h = 0;
 	if (data->ray.wall_side == 0)
-		data->ray.prep_wall_dist = fabs((data->player.map_posx - data->player.position.x
-					+ (1 - data->ray.step.x) / 2) / data->ray.ray_dir.x);
+		data->ray.prep_wall_dist = fabs((data->player.map_posx
+					- data->player.position.x + (1 - data->ray.step.x) / 2)
+				/ data->ray.ray_dir.x);
 	else
-		data->ray.prep_wall_dist = fabs((data->player.map_posy - data->player.position.y
-					+ (1 - data->ray.step.y) / 2) / data->ray.ray_dir.y);
-	data->tex.wall_line_h  = (int)(SCREENH / data->ray.prep_wall_dist);
-	data->draw.start = -data->tex.wall_line_h  / 2 + SCREENH / 2;
+		data->ray.prep_wall_dist = fabs((data->player.map_posy
+					- data->player.position.y + (1 - data->ray.step.y) / 2)
+				/ data->ray.ray_dir.y);
+	data->tex.wall_line_h = (int)(SCREENH / data->ray.prep_wall_dist);
+	data->draw.start = -data->tex.wall_line_h / 2 + SCREENH / 2;
 	if (data->draw.start < 0)
 		data->draw.start = 0;
-	data->draw.end = data->tex.wall_line_h  / 2 + SCREENH / 2;
+	data->draw.end = data->tex.wall_line_h / 2 + SCREENH / 2;
 	if (data->draw.end >= SCREENH)
 		data->draw.end = SCREENH - 1;
 }
