@@ -23,5 +23,5 @@ This project is written in ``c`` using ``mini-libx`` Library.
 
 ```
   git clone https://github.com/Courinha768/cub3D.git
-  cd cube3d ; make ; ./cub3d maps/basic_map.cub
+  cd cub3D ; make ; ./cub3D maps/basic_map.cub
 ```
