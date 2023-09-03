@@ -21,8 +21,6 @@ This project is written in ``c`` using ``mini-libx`` Library.
 
 ## Run Programe:
 
-_ if you'ar a 42-student :
-
 ```
   git clone https://github.com/Courinha768/cub3D.git
   cd cube3d ; make ; ./cub3d maps/basic_map.cub
