@@ -1,9 +1,9 @@
-NO ./textures/color1_1.xpm
-SO ./textures/color2_1.xpm
-WE ./textures/color3_1.xpm
-EA ./textures/color4_1.xpm
+NO ./textures/green.xpm
+SO ./textures/red.xpm
+WE ./textures/blue.xpm
+EA ./textures/yellow.xpm
 
-F 220,100,0
+F 0,0,0
 C 255,255,234
 
 11111111111111
