@@ -3,10 +3,8 @@ SO ./textures/brick.xpm
 WE ./textures/brick.xpm
 EA ./textures/brick.xpm
 
-F 220,100,0
-C 225,30,0
-
-EA ./textures/brick.xpm
+F 220,100,249
+C 225,30,23
 
 
 11111111111111
