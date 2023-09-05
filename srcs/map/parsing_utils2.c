@@ -41,3 +41,25 @@ void	parsing_utils(char *file_path, t_map_info *map_info)
 	set_map_size(map_info);
 	texture_files_exist(map_info);
 }
+
+bool	str_isdigit(char *str)
+{
+	int	i;
+
+	i = -1;
+	while (str[++i])
+	{
+		if (str[i] < 48 || str[i] > 57)
+			return (false);
+	}
+	return (true);
+}
+
+void	find_color_free_utils(char *new_line, char **array)
+{
+	free(array[0]);
+	free(array[1]);
+	free(array[2]);
+	free(array);
+	free(new_line);
+}

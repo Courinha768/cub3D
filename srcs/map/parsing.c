@@ -50,14 +50,16 @@ static int	find_color(char *line, t_map_info *map_info)
 		c3d_error(INVALID_COLORS, 3, line, map_info);
 	new_line = ft_substr(line, 2, ft_strlen(line) - 3);
 	rgb_code_char = ft_split(new_line, ',');
+	if (!str_isdigit(rgb_code_char[0]) || !str_isdigit(rgb_code_char[1])
+		|| !str_isdigit(rgb_code_char[2]))
+	{
+		find_color_free_utils(new_line, rgb_code_char);
+		c3d_error(INVALID_COLORS, 3, line, map_info);
+	}
 	rgb_code[0] = ft_atoi(rgb_code_char[0]);
 	rgb_code[1] = ft_atoi(rgb_code_char[1]);
 	rgb_code[2] = ft_atoi(rgb_code_char[2]);
-	free(rgb_code_char[0]);
-	free(rgb_code_char[1]);
-	free(rgb_code_char[2]);
-	free(rgb_code_char);
-	free(new_line);
+	find_color_free_utils(new_line, rgb_code_char);
 	if (rgb_code[0] < 0 || rgb_code[0] > 255
 		|| rgb_code[1] < 0 || rgb_code[1] > 255
 		|| rgb_code[2] < 0 || rgb_code[2] > 255)
@@ -107,6 +109,8 @@ t_map_info	parsing(char *file_path)
 	}
 	while (line)
 	{
+		if (!(line[0] == '1' || line[0] == ' ' || line[0] == '\n'))
+			c3d_error(MAP_NOT_CONSTRUCTED_CORRECTLY, fd, line, &map_info);
 		free(line);
 		line = get_next_valid_line(fd);
 	}

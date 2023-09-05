@@ -95,4 +95,7 @@ int				check_map_construction4(t_map_info map_info);
 
 char			*get_next_valid_line(int fd);
 
+bool			str_isdigit(char *str);
+void			find_color_free_utils(char *new_line, char **array);
+
 #endif

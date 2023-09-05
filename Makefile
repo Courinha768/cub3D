@@ -39,7 +39,7 @@ val			:	all
 	--show-reachable=yes \
 	--track-fds=yes \
 	--errors-for-leak-kinds=all \
-	--show-leak-kinds=all ./cub3D maps/subject_map.cub
+	--show-leak-kinds=all ./cub3D maps/map2.cub
 
 r			: all
 	./cub3D maps/basic_map.cub
